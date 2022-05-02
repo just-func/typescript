@@ -28,10 +28,10 @@
     "build": "run-p tsc:build",
     "build:watch": "run-p tsc:build:watch",
     "clean": "rimraf .nyc_output .typescript coverage cjs esm lib",
-    "coverage": "jest --coverage --maxWorkers=60%",
+    "coverage": "jest --coverage",
     "depcheck": "depcheck",
-    "jest:test": "jest --maxWorkers=60%",
-    "jest:watch": "jest --watch --maxWorkers=60%",
+    "jest:test": "jest",
+    "jest:watch": "jest --watch",
     "lint": "cross-env TIMING=1 eslint --ext=js,ts .",
     "nuke": "run-s clean nuke:local",
     "nuke:local": "rimraf node_modules || true",
@@ -41,6 +41,9 @@
     "tsc:build:watch": "tsc -p tsconfig.build.json --watch",
     "verify": "run-p build lint coverage depcheck",
     "watch": "run-p jest:watch"
+  },
+  "dependencies": {
+    "type-plus": "^4.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

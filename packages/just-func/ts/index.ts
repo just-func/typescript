@@ -1,4 +1,2 @@
-/**
- * There is no output yet
- */
-export const empty = {}
+export * from './Just'
+export * from './toJustValue'
