@@ -72,7 +72,7 @@
     "typescript": "^4.6.4"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 14.19"
   },
   "size-limit": [
     {
