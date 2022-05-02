@@ -11,12 +11,23 @@
     "nuke": "turbo run nuke",
     "nuke:local": "rimraf node_modules || true",
     "size": "turbo run size",
-    "verify": "turbo run lint build coverage depcheck"
+    "test": "turbo run test",
+    "verify": "turbo run lint build coverage depcheck",
+    "watch": "jest --watch"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "husky": "^7.0.4",
+    "jest": "^28.0.3",
+    "jest-progress-tracker": "^3.0.4",
+    "jest-validate": "^28.0.2",
+    "jest-watch-repeat": "^2.0.0",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^2.0.1",
+    "jest-watch-typeahead": "^1.1.0",
+    "npm-check-updates": "^12.5.11",
+    "rimraf": "^3.0.2",
     "turbo": "latest"
   }
 }

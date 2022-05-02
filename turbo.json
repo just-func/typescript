@@ -7,7 +7,9 @@
         "^build"
       ],
       "inputs": [
-        "ts/**/*.tsx?", "!ts/**/*.spec.tsx?", "!ts/**/*.stories.tsx?"
+        "ts/**/*.tsx?",
+        "!ts/**/*.spec.tsx?",
+        "!ts/**/*.stories.tsx?"
       ],
       "outputs": [
         "lib/**"
@@ -25,6 +27,9 @@
       ]
     },
     "depcheck": {},
+    "dev": {
+      "cache": false
+    },
     "lint": {},
     "size": {
       "dependsOn": [
@@ -40,8 +45,13 @@
       ]
     },
     "verify": {},
-    "dev": {
-      "cache": false
+    "watch": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "ts/**/*.tsx?"
+      ]
     }
   }
 }
