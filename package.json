@@ -2,12 +2,21 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean",
+    "coverage": "turbo run coverage",
+    "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "verify": "turbo run verify"
+    "prepare": "husky install",
+    "nuke": "turbo run nuke",
+    "nuke:local": "rimraf node_modules || true",
+    "size": "turbo run size",
+    "verify": "turbo run lint build coverage depcheck"
   },
   "devDependencies": {
-    "eslint": "^8.14.0",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "husky": "^7.0.4",
     "turbo": "latest"
   }
 }

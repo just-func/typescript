@@ -2,7 +2,8 @@
   "cSpell.words": [
     "macos",
     "testname",
-    "tsbuildinfo"
+    "tsbuildinfo",
+    "turborepo"
   ],
   "files.associations": {
     ".depcheckrc": "yaml"

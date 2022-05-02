@@ -5,6 +5,7 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    // incremental may not be needed with `turborepo`
     "incremental": true,
     "inlineSources": true,
     "module": "commonjs",

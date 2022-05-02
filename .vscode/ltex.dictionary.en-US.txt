@@ -1,3 +1,6 @@
 just-func
 Codacy
 Codecov
+Homa
+unional
+NONINFRINGEMENT

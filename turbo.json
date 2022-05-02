@@ -6,20 +6,40 @@
       "dependsOn": [
         "^build"
       ],
+      "inputs": [
+        "ts/**/*.tsx?", "!ts/**/*.spec.tsx?", "!ts/**/*.stories.tsx?"
+      ],
       "outputs": [
         "lib/**"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
+    "coverage": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "ts/**/*.tsx?"
+      ]
+    },
+    "depcheck": {},
+    "lint": {},
+    "size": {
+      "dependsOn": [
+        "build"
       ]
     },
     "test": {
       "dependsOn": [
         "^build"
+      ],
+      "inputs": [
+        "ts/**/*.tsx?"
       ]
     },
-    "lint": {
-      "outputs": []
-    },
-    "verify": {
-    },
+    "verify": {},
     "dev": {
       "cache": false
     }
