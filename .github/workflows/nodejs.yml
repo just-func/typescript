@@ -2,120 +2,81 @@ name: nodejs
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize]
 jobs:
   node-engine-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
       - name: Use Node.js 10
         uses: actions/setup-node@v1
         with:
           node-version: 10
-      - run: npm install --production --no-package-lock
+      - run: pnpm install --production --no-package-lock
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: setup yarn-cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: cache yarn global cache
-        if: runner.os != 'macos-latest'
-        uses: actions/cache@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn
-      - run: yarn commitlint-circle
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn dependency-check
-      - name: upload cjs folder
-        uses: actions/upload-artifact@v1
+          version: 7.0.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
         with:
-          name: cjs
-          path: cjs
-      - name: upload esm folder
-        uses: actions/upload-artifact@v1
-        with:
-          name: esm
-          path: esm
+          node-version: 16
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm verify
+      - name: codecov
+        uses: codecov/codecov-action@v3
   test:
     runs-on: ${{ matrix.os }}
-    needs: build
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        node-version: [10, 12, 14]
+        os: ["ubuntu-latest"]
+        node-version: [12, 14, 18]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: setup yarn-cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.0
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: cache yarn global cache
-        if: runner.os != 'macos-latest'
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn --ignore-engines
-      - run: yarn coverage
-      - name: codecov
-        if: matrix.node-version == 14 && matrix.os == 'ubuntu-latest'
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-      - name: codacy
-        if: matrix.node-version == 14 && matrix.os == 'ubuntu-latest'
-        uses: codacy/codacy-coverage-reporter-action@master
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-  release:
-    name: release
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    needs:
-      - build
-      - test
-    steps:
-      - uses: actions/checkout@v1
-      - name: setup yarn-cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: cache yarn global cache
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: download cjs folder
-        uses: actions/download-artifact@v1
-        with:
-          name: cjs
-      - name: download esm folder
-        uses: actions/download-artifact@v1
-        with:
-          name: esm
-      - run: yarn
-      - run: yarn semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm verify
+  # release:
+  #   name: release
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+  #   needs:
+  #     - build
+  #     - test
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #     - uses: pnpm/action-setup@v2.0.1
+  #       with:
+  #         version: 7.0.0
+  #     - name: Setup Node.js environment
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
+  #         cache: "pnpm"
+  #     - run: pnpm install
+  #     - run: pnpm build
+  #     - run: npx semantic-release
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
