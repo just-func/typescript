@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: "yarn"
-      - run: yarn install --immutable
+          cache: yarn
+      - run: yarn --immutable
       - run: yarn verify
       - name: codecov
         uses: codecov/codecov-action@v3
@@ -25,7 +25,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ["ubuntu-latest"]
+        os: [ubuntu-latest]
         node-version: [14, 18]
     steps:
       - uses: actions/checkout@v3
@@ -35,28 +35,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
-      - run: yarn install --immutable
+          cache: yarn
+      - run: yarn --immutable
       - run: yarn verify
-  release:
-    name: release
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    needs:
-      - build
-      - test
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "yarn"
-      - run: yarn install --immutable
-      - run: yarn build
-      - run: yarn dlx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

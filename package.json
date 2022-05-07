@@ -15,6 +15,7 @@
     "prepare": "husky install",
     "nuke": "turbo run nuke",
     "nuke:local": "rimraf node_modules || true",
+    "release": "turbo run build",
     "size": "turbo run size",
     "test": "turbo run test",
     "verify": "turbo run lint build coverage depcheck size",
