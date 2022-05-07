@@ -39,7 +39,7 @@
     "test": "run-p jest:test",
     "tsc:build": "tsc -p tsconfig.build.json",
     "tsc:build:watch": "tsc -p tsconfig.build.json --watch",
-    "verify": "run-p build lint coverage depcheck",
+    "verify": "npm-run-all -p build lint coverage depcheck -s size",
     "watch": "run-p jest:watch"
   },
   "dependencies": {
@@ -50,12 +50,12 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.3",
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-harmony": "^6.1.0",
     "jest": "^28.0.3",

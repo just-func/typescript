@@ -9,13 +9,14 @@
     "coverage": "turbo run coverage",
     "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
+    "just-func": "yarn workspace just-func",
     "lint": "turbo run lint",
     "prepare": "husky install",
     "nuke": "turbo run nuke",
     "nuke:local": "rimraf node_modules || true",
     "size": "turbo run size",
     "test": "turbo run test",
-    "verify": "turbo run lint build coverage depcheck",
+    "verify": "turbo run lint build coverage depcheck size",
     "watch": "jest --watch"
   },
   "devDependencies": {
