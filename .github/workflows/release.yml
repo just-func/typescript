@@ -4,11 +4,11 @@ on:
     branches:
       - main
 jobs:
-  verify:
+  code:
     uses: unional/.github/.github/workflows/yarn2-library-verify-linux.yml@main
 
   release:
     uses: unional/.github/.github/workflows/yarn2-library-release.yml@main
-    needs: verify
+    needs: code
     with:
       npm-token: ${{ secrets.NPM_TOKEN }}
