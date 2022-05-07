@@ -1,6 +1,6 @@
 # just-func for TypeScript
 
-[![GitHub Action][github-nodejs]][github-action-url]
+[![GitHub Action][github-release]][github-action-url]
 [![VS Code][vscode-image]][vscode-url]
 
 [just-func] is a functional programming language that can be represented in JSON.
@@ -29,5 +29,5 @@ please run `yarn changeset` (or `yarn cs` for short) to describe your changes.
 [vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
 [vscode-url]: https://code.visualstudio.com/
 [yarn PnP]: https://yarnpkg.com/features/pnp
-[github-nodejs]: https://github.com/justland/just-func-typescript/workflows/nodejs-verify/badge.svg
+[github-release]: https://github.com/justland/just-func-typescript/workflows/release/badge.svg
 [github-action-url]: https://github.com/justland/just-func-typescript/actions
