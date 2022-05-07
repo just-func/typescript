@@ -2,11 +2,6 @@ pull_request_rules:
   - name: automatic merge for Dependabot pull requests
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
-      - check-success=build
-      - check-success=test (ubuntu-latest, 14)
-      - check-success=test (ubuntu-latest, 18)
-      - check-success=Codacy Static Code Analysis
-      - check-success=CodeQL
       - title~=^Bump [^\s]+ from ([\d]+)\..+ to \1\.
     actions:
       merge:
@@ -14,11 +9,7 @@ pull_request_rules:
   - name: automatic merge for Renovate pull requests
     conditions:
       - author=renovate[bot]
-      - check-success=build
-      - check-success=test (ubuntu-latest, 14)
-      - check-success=test (ubuntu-latest, 18)
-      - check-success=Codacy Static Code Analysis
-      - check-success=CodeQL
+      - head~=^(?!major-)
     actions:
       merge:
         method: squash
@@ -27,11 +18,6 @@ pull_request_rules:
       - title~=^\[Snyk\]
       - head~=^snyk-fix
       - check-success~=^security/snyk
-      - check-success=build
-      - check-success=test (ubuntu-latest, 14)
-      - check-success=test (ubuntu-latest, 18)
-      - check-success=Codacy Static Code Analysis
-      - check-success=CodeQL
     actions:
       merge:
         method: squash
