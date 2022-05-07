@@ -21,6 +21,8 @@ jobs:
       - run: yarn verify
       - name: codecov
         uses: codecov/codecov-action@v3
+        with:
+          files: 'coverage/clover.xml'
   test:
     runs-on: ${{ matrix.os }}
     strategy:
