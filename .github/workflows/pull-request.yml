@@ -1,7 +1,8 @@
-name: nodejs
+name: pull-request
 on:
   pull_request:
     types: [opened, synchronize]
+
 jobs:
-  library:
-    uses: unional/.github/.github/workflows/yarn2-library-linux.yml@main
+  verify:
+    uses: unional/.github/.github/workflows/yarn2-library-verify-linux.yml@main
