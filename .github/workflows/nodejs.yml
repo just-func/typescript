@@ -12,16 +12,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 7.0.0
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: "pnpm"
-      - run: pnpm install
-      - run: pnpm verify
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn verify
       - name: codecov
         uses: codecov/codecov-action@v3
   test:
@@ -34,38 +31,32 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 7.0.0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-      - run: pnpm install
-      - run: pnpm verify
-  # release:
-  #   name: release
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/main'
-  #   needs:
-  #     - build
-  #     - test
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0
-  #     - uses: pnpm/action-setup@v2.0.1
-  #       with:
-  #         version: 7.0.0
-  #     - name: Setup Node.js environment
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 16
-  #         cache: "pnpm"
-  #     - run: pnpm install
-  #     - run: pnpm build
-  #     - run: npx semantic-release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn verify
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - build
+      - test
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn build
+      - run: yarn dlx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
