@@ -6,3 +6,7 @@ unional
 NONINFRINGEMENT
 JustEmpty
 JustUnit
+PnP
+
+corepack
+changesets

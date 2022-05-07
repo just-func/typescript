@@ -1,18 +1,33 @@
 # just-func for TypeScript
 
+[![GitHub Action][github-nodejs]][github-action-url]
+[![VS Code][vscode-image]][vscode-url]
+
 [just-func] is a functional programming language that can be represented in JSON.
 
-This repository contains the TypeScript implementation, tooling, and core libraries.
+This repository contains the implementation, tooling, and core libraries for JavaScript/TypeScript.
 
-```sh
-# add changesets
-pnpm changeset
+## Contributing
 
-# version
-pnpm changeset version
+This repository uses [yarn PnP].
 
-# publish
-pnpm changeset publish
-```
+You should use [corepack] to manage your package managers.
 
+When using [VS Code][vscode-url],
+please first install the recommended extensions before running `yarn`.
+
+We follow [conventional commits] to manage our changes,
+and we use [changesets] to manage versioning.
+
+If you are creating an PR,
+please run `yarn changeset` (or `yarn cs` for short) to describe your changes.
+
+[changesets]: https://github.com/changesets/changesets
+[conventional commits]: https://www.conventionalcommits.org/en/v1.0.0/
+[corepack]: https://nodejs.org/api/corepack.html
 [just-func]: https://github.com/justland/just-func
+[vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
+[vscode-url]: https://code.visualstudio.com/
+[yarn PnP]: https://yarnpkg.com/features/pnp
+[github-nodejs]: https://github.com/justland/just-func-typescript/workflows/nodejs-verify/badge.svg
+[github-action-url]: https://github.com/justland/just-func-typescript/actions

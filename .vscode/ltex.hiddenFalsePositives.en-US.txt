@@ -8,3 +8,7 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[GitHub NodeJS]github-action-url [Codecov]codecov-url [Codacy Grade]codacy-url\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qjust-func for TypeScript\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qjust-func is a functional programming language that can be represented in JSON.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QWhen using [VS Code]vscode-url, please make sure you have installed the recommended extensions before running \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[VS Code]vscode-url\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[NPM version]npm-url [NPM downloads]downloads-url [Codecov]codecov-url [Codacy Grade]codacy-url\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[GitHub Action]github-action-url [VS Code]vscode-url\\E$"}
