@@ -2186,7 +2186,7 @@ __metadata:
     depcheck: 1.4.3
     eslint: 8.15.0
     eslint-config-prettier: 8.5.0
-    eslint-plugin-harmony: 7.0.1
+    eslint-plugin-harmony: 7.0.2
     jest: 28.1.0
     jest-progress-tracker: 3.0.4
     jest-validate: 28.1.0
@@ -2710,7 +2710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:5.23.0":
+"@typescript-eslint/parser@npm:5.23.0, @typescript-eslint/parser@npm:^5.23.0":
   version: 5.23.0
   resolution: "@typescript-eslint/parser@npm:5.23.0"
   dependencies:
@@ -4688,17 +4688,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-harmony@npm:7.0.1":
-  version: 7.0.1
-  resolution: "eslint-plugin-harmony@npm:7.0.1"
+"eslint-plugin-harmony@npm:7.0.2":
+  version: 7.0.2
+  resolution: "eslint-plugin-harmony@npm:7.0.2"
   dependencies:
     "@typescript-eslint/experimental-utils": ^5.23.0
+    "@typescript-eslint/parser": ^5.23.0
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
-    "@typescript-eslint/parser": ^5.0.0
     eslint: ">=8.4.0"
     eslint-config-prettier: ^8.0.0
-  checksum: 2131f12e75f37aa7b3cd9f4ec85a0fa681ac522941fc3064200b5586c352665f2f4be4cdaf9f5a8b009a7d7f5c22e223714dd6a0be647c2d9acb163841c42772
+  checksum: 18e43cf047b83a4cff7b54bf7c564820619251341556c72d94fa4fb0e3090698fb4edfd3578f2cd69e64f2327ba53b32a729da9a3349bbb46122cadad113589d
   languageName: node
   linkType: hard
 
@@ -7109,7 +7109,7 @@ __metadata:
     depcheck: 1.4.3
     eslint: 8.15.0
     eslint-config-prettier: 8.5.0
-    eslint-plugin-harmony: 7.0.1
+    eslint-plugin-harmony: 7.0.2
     jest: 28.1.0
     jest-progress-tracker: 3.0.4
     jest-validate: 28.1.0

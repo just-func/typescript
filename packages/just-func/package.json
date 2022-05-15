@@ -57,7 +57,7 @@
     "depcheck": "1.4.3",
     "eslint": "8.15.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-harmony": "7.0.1",
+    "eslint-plugin-harmony": "7.0.2",
     "jest": "28.1.0",
     "jest-progress-tracker": "3.0.4",
     "jest-validate": "28.1.0",
