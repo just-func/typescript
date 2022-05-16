@@ -2186,7 +2186,7 @@ __metadata:
     depcheck: 1.4.3
     eslint: 8.15.0
     eslint-config-prettier: 8.5.0
-    eslint-plugin-harmony: 7.0.2
+    eslint-plugin-harmony: 7.1.0
     jest: 28.1.0
     jest-progress-tracker: 3.0.4
     jest-validate: 28.1.0
@@ -4766,9 +4766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-harmony@npm:7.0.2":
-  version: 7.0.2
-  resolution: "eslint-plugin-harmony@npm:7.0.2"
+"eslint-plugin-harmony@npm:7.1.0":
+  version: 7.1.0
+  resolution: "eslint-plugin-harmony@npm:7.1.0"
   dependencies:
     "@typescript-eslint/experimental-utils": ^5.23.0
     "@typescript-eslint/parser": ^5.23.0
@@ -4776,7 +4776,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     eslint: ">=8.4.0"
     eslint-config-prettier: ^8.0.0
-  checksum: 18e43cf047b83a4cff7b54bf7c564820619251341556c72d94fa4fb0e3090698fb4edfd3578f2cd69e64f2327ba53b32a729da9a3349bbb46122cadad113589d
+  checksum: 21c41bd6627680f524fa18c123a8bc92a34ba12eadd961fde52c715056c9adba04231ee27ce7eba14b8901f0a74413199937953fc6123f8e02a4b748978d512f
   languageName: node
   linkType: hard
 
@@ -7187,7 +7187,7 @@ __metadata:
     depcheck: 1.4.3
     eslint: 8.15.0
     eslint-config-prettier: 8.5.0
-    eslint-plugin-harmony: 7.0.2
+    eslint-plugin-harmony: 7.1.0
     jest: 28.1.0
     jest-progress-tracker: 3.0.4
     jest-validate: 28.1.0
