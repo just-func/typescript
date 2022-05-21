@@ -2376,7 +2376,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 13.0.2
+    npm-check-updates: 13.0.3
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -5283,13 +5283,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"figgy-pudding@npm:^3.5.1":
-  version: 3.5.2
-  resolution: "figgy-pudding@npm:3.5.2"
-  checksum: 4090bd66193693dcda605e44d6b8715d8fb5c92a67acd57826e55cf816a342f550d57e5638f822b39366e1b2fdb244e99b3068a37213aa1d6c1bf602b8fde5ae
-  languageName: node
-  linkType: hard
-
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -7368,7 +7361,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 13.0.2
+    npm-check-updates: 13.0.3
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -8132,16 +8125,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:13.0.2":
-  version: 13.0.2
-  resolution: "npm-check-updates@npm:13.0.2"
+"npm-check-updates@npm:13.0.3":
+  version: 13.0.3
+  resolution: "npm-check-updates@npm:13.0.3"
   dependencies:
     chalk: ^4.1.2
     cint: ^8.2.1
     cli-table: ^0.3.11
     commander: ^9.2.0
     fast-memoize: ^2.5.2
-    figgy-pudding: ^3.5.1
     find-up: 5.0.0
     fp-and-or: ^0.1.3
     get-stdin: ^8.0.0
@@ -8168,7 +8160,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: 91dee7fc66950a6c2e9394134e9d92c1260669ab97439c9e8c8900573c5314596bff66963319958804cbefa0c1aea5bf63a1df0947f76d7cd332d6a494ef0a19
+  checksum: a9f1846bb3ed488569586861f1e050317cf2c098c37f32134608fb62d03d1ec06246fae022112bfff59368dcf3a911854cc0ffdef2bd50b60eb57682910d6e94
   languageName: node
   linkType: hard
 
@@ -9267,7 +9259,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 13.0.2
+    npm-check-updates: 13.0.3
     rimraf: 3.0.2
     turbo: latest
     typescript: 4.6.4
