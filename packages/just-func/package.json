@@ -46,8 +46,8 @@
     "@just-func/types": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
-    "@babel/preset-env": "7.18.0",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
     "@babel/preset-typescript": "7.17.12",
     "@size-limit/file": "^7.0.8",
     "@size-limit/webpack": "^7.0.8",
