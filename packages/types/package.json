@@ -48,8 +48,8 @@
     "type-plus": "^4.9.0"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
-    "@babel/preset-env": "7.18.0",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
     "@babel/preset-typescript": "7.17.12",
     "@size-limit/preset-small-lib": "7.0.8",
     "@types/jest": "27.5.1",
