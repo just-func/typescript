@@ -109,7 +109,16 @@ describe('JustMeta', () => {
     foo(undefined, { [Symbol.for('abc')]: 1 })
   })
   it('is readonly', () => {
-    isType.equal<true, Readonly<{ [k: string | symbol]: any }>, JustMeta>()
+    isType.equal<true, Readonly<{
+      error?: Error
+      [k: string | symbol]: any
+    }>, JustMeta>()
+  })
+  it('accept and error prop by default', () => {
+    // code completion is available
+    const meta: JustMeta = { error: new Error() }
+    expect(meta.error).toBeDefined()
+    isType.equal<true, true, CanAssign<{ error: Error }, JustMeta>>()
   })
 })
 

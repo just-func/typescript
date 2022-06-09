@@ -1,6 +1,9 @@
 import type { AnyFunction, Equal } from 'type-plus'
 
-export type JustMeta = Readonly<{ [k: string | symbol]: any }>
+export type JustMeta = {
+  readonly error?: Error,
+  readonly [k: string | symbol]: any
+}
 
 /**
  * Just data with no value.
