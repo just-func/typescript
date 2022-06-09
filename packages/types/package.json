@@ -41,6 +41,7 @@
     "ts:build": "tsc -p tsconfig.build.json",
     "ts:build:watch": "tsc -p tsconfig.build.json --watch",
     "ts:clean": "rimraf .tsbuildinfo || true",
+    "version": "changeset version && yarn install",
     "verify": "npm-run-all -p build lint coverage depcheck -s size",
     "watch": "run-p jest:watch"
   },
