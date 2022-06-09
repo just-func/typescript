@@ -99,6 +99,20 @@ describe('JustResult', () => {
   })
 })
 
+describe('JustMeta', () => {
+  it('accepts object with string keys', () => {
+    function foo(params?: undefined, meta?: JustMeta) { }
+    foo(undefined, { a: 1 })
+  })
+  it('accepts object with symbol keys', () => {
+    function foo(params?: undefined, meta?: JustMeta) { }
+    foo(undefined, { [Symbol.for('abc')]: 1 })
+  })
+  it('is readonly', () => {
+    isType.equal<true, Readonly<{ [k: string | symbol]: any }>, JustMeta>()
+  })
+})
+
 describe('StackTraceMeta', () => {
   it('is a JustMeta', () => {
     isType.equal<true, true, CanAssign<StackTraceMeta, JustMeta>>()
