@@ -19,6 +19,7 @@
     "release": "turbo run build",
     "size": "turbo run size",
     "test": "turbo run test",
+    "types": "yarn workspace @just-func/types",
     "version": "yarn cs version",
     "verify": "turbo run lint build coverage depcheck size",
     "watch": "jest --watch"
