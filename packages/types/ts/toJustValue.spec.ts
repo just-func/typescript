@@ -49,3 +49,7 @@ it('returns JustDuo inferring Value and Meta', () => {
 
   isType.equal<true, JustDuo<string, { logs: string[] }>, typeof r>()
 })
+
+it('can accept a JustMeta (but not used)', () => {
+  expect(toJustValue(1, {})).toEqual([1])
+})

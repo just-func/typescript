@@ -1,6 +1,6 @@
-import { isType } from 'type-plus'
+import { CanAssign, isType } from 'type-plus'
 import { JustDuo, JustUno, JustEmpty, JustValue } from '.'
-import { JustResult } from './Just'
+import { JustMeta, JustResult, StackTraceMeta } from './Just'
 import { duo, procedure, unit } from './testFn'
 
 describe('JustEmpty', () => {
@@ -96,5 +96,11 @@ describe('JustResult', () => {
     }
     const r = returnMeta()
     isType.equal<true, JustDuo<string[], { a: string }>, typeof r>()
+  })
+})
+
+describe('StackTraceMeta', () => {
+  it('is a JustMeta', () => {
+    isType.equal<true, true, CanAssign<StackTraceMeta, JustMeta>>()
   })
 })

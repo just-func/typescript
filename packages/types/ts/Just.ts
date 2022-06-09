@@ -1,4 +1,5 @@
-import { Equal } from 'type-plus'
+import type { AnyFunction, Equal } from 'type-plus'
+
 export interface JustMeta { [k: string | symbol]: any }
 
 /**
@@ -29,3 +30,10 @@ export type JustResult<
   (Meta extends JustMeta
     ? JustDuo<Value, Meta>
     : (Value extends Array<any> ? JustUno<Value> : Value))
+
+/**
+ * Used by code that support adjusting their stacktrace when error occurs.
+ */
+export interface StackTraceMeta {
+  ssf?: AnyFunction
+}
