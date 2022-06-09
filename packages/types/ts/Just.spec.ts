@@ -101,16 +101,16 @@ describe('JustResult', () => {
 
 describe('JustMeta', () => {
   it('accepts object with string keys', () => {
-    function foo(params?: undefined, meta?: JustMeta) { }
+    function foo(_params?: undefined, _meta?: JustMeta) { }
     foo(undefined, { a: 1 })
   })
   it('accepts object with symbol keys', () => {
-    function foo(params?: undefined, meta?: JustMeta) { }
+    function foo(_params?: undefined, _meta?: JustMeta) { }
     foo(undefined, { [Symbol.for('abc')]: 1 })
   })
   it('is readonly', () => {
     isType.equal<true, Readonly<{
-      error?: Error
+      error?: Error,
       [k: string | symbol]: any
     }>, JustMeta>()
   })

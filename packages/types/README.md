@@ -15,7 +15,7 @@ Type System of [just-func][just-func-typescript].
 ## Metadata
 
 Metadata is a first-class concept in [just-func].
-Every compliant [just-func] function accepts an optional [`JustMeta`][just.ts] value as its second parameter.
+A compliant [just-func] function can accept a [`JustMeta`][just.ts] value as its second parameter.
 
 The parameter is read only and can never be modified by the calling function.
 
