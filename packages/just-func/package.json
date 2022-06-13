@@ -46,7 +46,7 @@
     "@just-func/types": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "7.18.2",
+    "@babel/core": "7.18.5",
     "@babel/preset-env": "7.18.2",
     "@babel/preset-typescript": "7.17.12",
     "@size-limit/file": "^7.0.8",
