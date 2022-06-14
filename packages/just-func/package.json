@@ -71,9 +71,6 @@
     "rimraf": "3.0.2",
     "size-limit": "7.0.8"
   },
-  "engines": {
-    "node": ">= 14.19"
-  },
   "size-limit": [
     {
       "path": "lib/index.js",
