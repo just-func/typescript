@@ -1,5 +1,13 @@
 # just-func
 
+## 0.1.3
+
+### Patch Changes
+
+- a304d87: Remove `engines.node` requirement. Not using anything specific to NodeJS 14.19
+- Updated dependencies [a304d87]
+  - @just-func/types@0.2.1
+
 ## 0.1.2
 
 ### Patch Changes
