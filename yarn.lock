@@ -2525,7 +2525,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 14.0.2
+    npm-check-updates: 14.1.0
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -7859,7 +7859,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 14.0.2
+    npm-check-updates: 14.1.0
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -7914,7 +7914,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.1.4":
+"kleur@npm:^4.0.1, kleur@npm:^4.1.4":
   version: 4.1.4
   resolution: "kleur@npm:4.1.4"
   checksum: 7f6db36e378045dec14acd3cbf0b1e59130c09e984ee8b8ce56dd2d2257cfff90389c1e8f8b19bd09dd5d241080566a814b4ccd99fdcef91f59ef93ec33c8a44
@@ -8676,9 +8676,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:14.0.2":
-  version: 14.0.2
-  resolution: "npm-check-updates@npm:14.0.2"
+"npm-check-updates@npm:14.1.0":
+  version: 14.1.0
+  resolution: "npm-check-updates@npm:14.1.0"
   dependencies:
     chalk: ^4.1.2
     cint: ^8.2.1
@@ -8698,7 +8698,7 @@ __metadata:
     pacote: ^13.6.0
     parse-github-url: ^1.0.2
     progress: ^2.0.3
-    prompts: ^2.4.2
+    prompts: "git+https://github.com/raineorshine/prompts.git#ncu"
     rc-config-loader: ^4.1.0
     remote-git-tags: ^3.0.0
     rimraf: ^3.0.2
@@ -8711,7 +8711,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: 978de1ffa7a50a140f2473d49779ea8306d2105d97cf68d0a6599acb5540ac288d0ca7f9d0c51b89fbb58861dbdf5bae13354337c50c8a31ea53432655058384
+  checksum: f633e66934934f8cce2f1b72d171d099ba977743afcc38cfb307ea139ba4059148133982954639e117219c9e143511695950ac7bd41c0e8c04c9abe842d98edf
   languageName: node
   linkType: hard
 
@@ -9323,7 +9323,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prompts@npm:^2.0.1, prompts@npm:^2.4.2":
+"prompts@git+https://github.com/raineorshine/prompts.git#ncu":
+  version: 2.4.2
+  resolution: "prompts@https://github.com/raineorshine/prompts.git#commit=79225ff95ff06c4e1e9f4862114a5bbae6690251"
+  dependencies:
+    kleur: ^4.0.1
+    sisteransi: ^1.0.5
+  checksum: 151cdcdb83058e215b7963fdb9160c52fdd8b585765c7d4013faed942a4fa737f8831f2c0425d7d007b4530e7aaf104dbf45ff3adc3b400260e058d284224fa3
+  languageName: node
+  linkType: hard
+
+"prompts@npm:^2.0.1":
   version: 2.4.2
   resolution: "prompts@npm:2.4.2"
   dependencies:
@@ -9831,7 +9841,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 1.1.0
-    npm-check-updates: 14.0.2
+    npm-check-updates: 14.1.0
     rimraf: 3.0.2
     turbo: latest
     typescript: 4.7.4
