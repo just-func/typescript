@@ -2556,7 +2556,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.0.0
-    npm-check-updates: 15.2.2
+    npm-check-updates: 15.2.5
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -4438,13 +4438,6 @@ __metadata:
   version: 1.2.2
   resolution: "ci-job-number@npm:1.2.2"
   checksum: 9da8edd2c1d79e59f28e1c62e8f9f2611c29d6e470cd02551fcb8b5f5eaed6385711b9c5e3fb3b9c456dc716058fc48b4a9e38783bc378a26a8c7d4ed1348211
-  languageName: node
-  linkType: hard
-
-"cint@npm:^8.2.1":
-  version: 8.2.1
-  resolution: "cint@npm:8.2.1"
-  checksum: 5f32feed160b63f5f7622095a0e330e0679b47ea4d7cd6a4eaf8045e1298092710f5cfdd005717954966edf9e3722df860cbff4632917c1a9ad3d43450bcddca
   languageName: node
   linkType: hard
 
@@ -8039,7 +8032,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.0.0
-    npm-check-updates: 15.2.2
+    npm-check-updates: 15.2.5
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 7.0.8
@@ -8864,12 +8857,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:15.2.2":
-  version: 15.2.2
-  resolution: "npm-check-updates@npm:15.2.2"
+"npm-check-updates@npm:15.2.5":
+  version: 15.2.5
+  resolution: "npm-check-updates@npm:15.2.5"
   dependencies:
     chalk: ^4.1.2
-    cint: ^8.2.1
     cli-table: ^0.3.11
     commander: ^9.3.0
     fast-memoize: ^2.5.2
@@ -8899,7 +8891,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: fea0172ce12b86f986d1ce3eff966711f7df427b315b255a1cad0ab898084b9ae3fb0a0d5f090d2b34ec993c864f6f79acd303c27b0e86be00fd76f78c88d23a
+  checksum: a4ba8b489624f8adf80a100d28444f8e83fb7d9b24d1d527548b6dd22062f9b6aa63e683d934bd717be60a1316b9884853ae8090171effe51491f2d11bd44bec
   languageName: node
   linkType: hard
 
@@ -10057,7 +10049,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.0.0
-    npm-check-updates: 15.2.2
+    npm-check-updates: 15.2.5
     rimraf: 3.0.2
     turbo: latest
     typescript: 4.7.4
