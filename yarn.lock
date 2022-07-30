@@ -2774,7 +2774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:7.0.8, @size-limit/file@npm:^7.0.8":
+"@size-limit/file@npm:7.0.8":
   version: 7.0.8
   resolution: "@size-limit/file@npm:7.0.8"
   dependencies:
@@ -2782,6 +2782,17 @@ __metadata:
   peerDependencies:
     size-limit: 7.0.8
   checksum: 8762ae39ff9e13685928966564110e19246fe44cc65296a2eea028dda205c7c9e2879f73eecd3d20875ef80b696e86d806e281cf0f2d29d8f810e1c69bc2540d
+  languageName: node
+  linkType: hard
+
+"@size-limit/file@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@size-limit/file@npm:8.0.0"
+  dependencies:
+    semver: 7.3.7
+  peerDependencies:
+    size-limit: 8.0.0
+  checksum: 57de1c7cf7f5e72afcc03879398157816909fdeeae3c9e836aa1e3a391fcb1cc1649d089d646c47af76e0ee04333fcb078138904d5419d2106cdcef1adafe531
   languageName: node
   linkType: hard
 
@@ -8055,7 +8066,7 @@ __metadata:
     "@babel/preset-env": 7.18.6
     "@babel/preset-typescript": 7.18.6
     "@just-func/types": "workspace:*"
-    "@size-limit/file": ^7.0.8
+    "@size-limit/file": ^8.0.0
     "@size-limit/webpack": ^7.0.8
     "@types/jest": 28.1.6
     "@typescript-eslint/eslint-plugin": 5.31.0
