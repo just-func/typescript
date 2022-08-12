@@ -2746,7 +2746,7 @@ __metadata:
     npm-check-updates: 16.0.5
     npm-run-all: 4.1.5
     rimraf: 3.0.2
-    size-limit: 8.0.0
+    size-limit: 8.0.1
     type-plus: ^4.9.0
   languageName: unknown
   linkType: soft
@@ -8277,7 +8277,7 @@ __metadata:
     npm-check-updates: 16.0.5
     npm-run-all: 4.1.5
     rimraf: 3.0.2
-    size-limit: 8.0.0
+    size-limit: 8.0.1
   languageName: unknown
   linkType: soft
 
@@ -10535,9 +10535,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:8.0.0":
-  version: 8.0.0
-  resolution: "size-limit@npm:8.0.0"
+"size-limit@npm:8.0.1":
+  version: 8.0.1
+  resolution: "size-limit@npm:8.0.1"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.3
@@ -10549,7 +10549,7 @@ __metadata:
     picocolors: ^1.0.0
   bin:
     size-limit: bin.js
-  checksum: 727b65e3c3717c1b8f67b31d285e325416062ad83f9b0d976554388344a7c2d73be64b8a5ed02846d4d8bb3bd5033e23c981dedf91684f54873b85c6c21e78a4
+  checksum: f37f8d33c4f9768db3cfdf0e5a761238d7e54dccc342004d782fe0b68aaed84153eb2e72f3b9fd61ef00e9cb7c648fdefc5718146c26abac73470a22838750a0
   languageName: node
   linkType: hard
 
