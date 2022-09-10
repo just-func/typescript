@@ -37,7 +37,7 @@
     "jest-watch-suspend": "1.1.2",
     "jest-watch-toggle-config": "2.0.1",
     "jest-watch-typeahead": "2.2.0",
-    "npm-check-updates": "16.1.1",
+    "npm-check-updates": "16.1.2",
     "rimraf": "3.0.2",
     "turbo": "latest",
     "typescript": "4.8.3"
