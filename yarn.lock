@@ -2857,7 +2857,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.2.0
-    npm-check-updates: 16.1.1
+    npm-check-updates: 16.1.2
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 8.1.0
@@ -8397,7 +8397,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.2.0
-    npm-check-updates: 16.1.1
+    npm-check-updates: 16.1.2
     npm-run-all: 4.1.5
     rimraf: 3.0.2
     size-limit: 8.1.0
@@ -9222,9 +9222,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:16.1.1":
-  version: 16.1.1
-  resolution: "npm-check-updates@npm:16.1.1"
+"npm-check-updates@npm:16.1.2":
+  version: 16.1.2
+  resolution: "npm-check-updates@npm:16.1.2"
   dependencies:
     chalk: ^5.0.1
     cli-table: ^0.3.11
@@ -9256,7 +9256,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: 704ec7b2041c624b7b51c03deca0c32402c8e2234c5be065d9483b3915b7fa996263a7adeb3bd58f4016ec82dd035676b3b3f2d68f6965c816ff5990ed21a405
+  checksum: 5a37570e5581d1be67edd02740b8e0c352e577fb5491ca57d8d4846df01f559688cf2f8d751716635bdce0c98805eab6042ace628de0c3d9bb3a280f92aab1e6
   languageName: node
   linkType: hard
 
@@ -10412,7 +10412,7 @@ __metadata:
     jest-watch-suspend: 1.1.2
     jest-watch-toggle-config: 2.0.1
     jest-watch-typeahead: 2.2.0
-    npm-check-updates: 16.1.1
+    npm-check-updates: 16.1.2
     rimraf: 3.0.2
     turbo: latest
     typescript: 4.8.3
