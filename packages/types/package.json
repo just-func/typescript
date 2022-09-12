@@ -58,7 +58,7 @@
     "@typescript-eslint/parser": "5.36.2",
     "cross-env": "7.0.3",
     "depcheck": "1.4.3",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-harmony": "7.1.0",
     "jest": "29.0.3",
