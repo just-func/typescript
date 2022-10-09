@@ -1,5 +1,12 @@
 # @just-func/types
 
+## 0.3.3
+
+### Patch Changes
+
+- 0366fb8: Adjust return types to `readonly`.
+  Matching `JustUno<V>` and `JustDuo<V, M>`.
+
 ## 0.3.2
 
 ### Patch Changes
