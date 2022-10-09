@@ -19,13 +19,11 @@ export type JustUno<Value> = readonly [Value]
 export type JustDuo<Value, Meta extends JustMeta> = readonly [Value, Meta]
 
 export type JustValue<
-  Value = undefined,
+  Value = void,
   Meta extends JustMeta | undefined = undefined> =
   (Meta extends JustMeta
     ? JustDuo<Value, Meta>
-    : (Equal<Value, undefined> extends true
-      ? JustEmpty
-      : JustUno<Value>))
+    : Equal<Value, void, JustEmpty, JustUno<Value>>)
 
 export type JustResult<
   Value = void,
@@ -35,7 +33,7 @@ export type JustResult<
     : (Value extends Array<any> ? JustUno<Value> : Value))
 
 export function justValue<
-  Value = undefined,
+  Value = void,
   Meta extends JustMeta | undefined = undefined>(value: JustValue<Value, Meta>) {
   return value
 }
@@ -53,11 +51,15 @@ export type JustMetaParam = {
 
 export type JustParams = [arg?: any, meta?: JustMetaParam]
 
-export type JustReturnTypes = JustEmpty | JustUno<any> | JustDuo<any, JustMeta>
+/**
+ * Describes what JustValues can be.
+ * While `JustValue` infers the type of a single JustValue.
+ */
+export type JustValues = JustEmpty | JustUno<any> | JustDuo<any, JustMeta>
 
 export type JustFunction<
   Param extends JustParams = JustParams,
-  R extends JustReturnTypes = JustEmpty
+  R extends JustValues = JustEmpty
 > = (...args: Param) => (R extends [infer V, infer M]
   ? readonly [V, M]
   : (R extends [infer V] ? readonly [V] : R)
