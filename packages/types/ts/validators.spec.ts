@@ -117,6 +117,10 @@ describe(`${isJustDuo.name}()`, () => {
 })
 
 describe(`${isJustValue.name}()`, () => {
+  it('returns false for not JustValue', () => {
+    notJustValue.forEach(value => expect(isJustValue(value)).toBe(false))
+  })
+
   it(`returns true for JustValue`, () => {
     expect(isJustValue([])).toBe(true)
     expect(isJustValue([1])).toBe(true)
