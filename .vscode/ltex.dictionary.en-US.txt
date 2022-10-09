@@ -15,3 +15,5 @@ changesets
 
 param
 params
+
+pnpm
