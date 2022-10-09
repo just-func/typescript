@@ -1,8 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
@@ -10,17 +7,17 @@
     "cs": "changeset",
     "depcheck": "turbo run depcheck",
     "dev": "turbo run dev --parallel",
-    "just-func": "yarn workspace just-func",
+    "jf": "pnpm --filter just-func",
+    "just-func": "pnpm --filter just-func",
     "lint": "turbo run lint",
-    "publish": "yarn cs publish",
     "prepare": "husky install",
     "nuke": "turbo run nuke",
-    "nuke:local": "rimraf node_modules || true",
-    "release": "turbo run build",
+    "nuke:local": "rimraf node_modules",
+    "release": "pnpm changeset publish",
     "size": "turbo run size",
     "test": "turbo run test",
-    "types": "yarn workspace @just-func/types",
-    "version": "yarn cs version",
+    "types": "pnpm --filter @just-func/types",
+    "version": "pnpm cs version",
     "verify": "turbo run lint build coverage depcheck size",
     "watch": "jest --watch"
   },
@@ -39,8 +36,8 @@
     "jest-watch-typeahead": "2.2.0",
     "npm-check-updates": "16.3.11",
     "rimraf": "3.0.2",
-    "turbo": "latest",
+    "turbo": "1.5.5",
     "typescript": "4.8.4"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "pnpm@7.13.3"
 }
