@@ -13,11 +13,11 @@
     "prepare": "husky install",
     "nuke": "turbo run nuke",
     "nuke:local": "rimraf node_modules",
-    "release": "pnpm changeset publish",
+    "release": "changeset publish",
     "size": "turbo run size",
     "test": "turbo run test",
     "types": "pnpm --filter @just-func/types",
-    "version": "pnpm cs version",
+    "version": "changeset version",
     "verify": "turbo run lint build coverage depcheck size",
     "watch": "jest --watch"
   },
