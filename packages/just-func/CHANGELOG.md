@@ -1,5 +1,12 @@
 # just-func
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [35fd14a]
+  - @just-func/types@0.3.2
+
 ## 0.1.5
 
 ### Patch Changes

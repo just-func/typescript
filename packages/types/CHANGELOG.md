@@ -1,5 +1,11 @@
 # @just-func/types
 
+## 0.3.2
+
+### Patch Changes
+
+- 35fd14a: Add alias `JustParams` and `JustReturnTypes`
+
 ## 0.3.1
 
 ### Patch Changes
