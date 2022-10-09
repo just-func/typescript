@@ -1,5 +1,12 @@
 # @just-func/types
 
+## 0.3.1
+
+### Patch Changes
+
+- 5b2b23f: Fix the implementation of `justFunction()` and `JustFunction`.
+  The original implementation does not cover all the cases correctly.
+
 ## 0.3.0
 
 ### Minor Changes
