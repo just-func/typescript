@@ -1,5 +1,11 @@
 # just-func
 
+## 0.2.2
+
+### Patch Changes
+
+- Test release
+
 ## 0.2.1
 
 ### Patch Changes
