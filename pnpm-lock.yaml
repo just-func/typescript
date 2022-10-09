@@ -44,8 +44,8 @@ importers:
       '@babel/preset-env': 7.19.3
       '@babel/preset-typescript': 7.18.6
       '@just-func/types': workspace:^
-      '@size-limit/file': ^8.0.0
-      '@size-limit/webpack': ^8.0.0
+      '@size-limit/file': ^8.1.0
+      '@size-limit/webpack': ^8.1.0
       '@types/jest': 29.1.2
       '@typescript-eslint/eslint-plugin': 5.39.0
       '@typescript-eslint/parser': 5.39.0
@@ -65,7 +65,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: ^4.9.0
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       '@just-func/types': link:../types
@@ -122,7 +122,7 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: ^4.9.0
+      type-plus: ^4.13.2
       typescript: ^4.8.4
     dependencies:
       type-plus: 4.13.2
