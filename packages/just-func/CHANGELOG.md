@@ -1,5 +1,11 @@
 # just-func
 
+## 0.2.1
+
+### Patch Changes
+
+- a08a5fb: Re-release: the workspace version is somehow not updated.
+
 ## 0.2.0
 
 ### Minor Changes
