@@ -23,15 +23,13 @@ One of those constraints are manifest within [`JustFunction`].
 
 Here are the constraints imposed by [`JustFunction`]:
 
-- It can accept zero or one argument, but no more. (*1)
-- It always returns a tuple. The tuple will have either 0, 1, or 2 elements.
+- It can accept 0, 1, or 2 arguments. The second argument is reserved for metadata processing.
+- It always returns a tuple. The tuple will have either 0, 1, or 2 elements.\
+  The second element is reserved for returning metadata.
   - For function normally returns nothing (`() => void`), return and empty tuple (`() => readonly []`)
   - For function normally returns a value (`() => T`), returns a single-value tuple (`() => readonly [T]`), or a two-values tuple if it needs to return some metadata (`() => readonly [T, M]`)
 - It will never throw an error/exception. The error is returned inside the metadata `() => readonly [undefined, { error: E }]`
 - The return values should be immutable
-
-*1: We're actually reserving the second argument for metadata processing.
-We might add that in the future, but currently it is not in the plan.
 
 ## JustEmpty vs JustUnit
 
