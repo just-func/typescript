@@ -1,5 +1,5 @@
 import { assertType, isType } from 'type-plus'
-import { JustDuo, JustUno, JustEmpty, toJustValue } from '.'
+import { JustDuo, JustUno, JustEmpty, toJustValue, isJustEmpty } from '.'
 import { procedure } from './testFn'
 
 it('returns JustEmpty when the function returns nothing', () => {
@@ -52,4 +52,8 @@ it('returns JustDuo inferring Value and Meta', () => {
 
 it('can accept a JustMeta (but not used)', () => {
   expect(toJustValue(1, {})).toEqual([1])
+})
+
+it(`allow to be called without arugments`, () => {
+  expect(isJustEmpty(toJustValue())).toBe(true)
 })
