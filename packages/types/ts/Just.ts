@@ -48,15 +48,22 @@ export type StackTraceMeta = {
 }
 
 export type JustFunction<
-  P extends [arg?: any] = [arg?: any],
-  V = undefined,
-  M extends JustMeta | undefined = undefined
-> = (...args: P) => JustValue<V, M>
+  Param extends [arg?: any] = [arg?: any],
+  R extends JustEmpty | JustUno<any> | JustDuo<any, JustMeta> = JustEmpty
+> = (...args: Param) => (R extends readonly [infer V, infer M] ? readonly [V, M] : R)
 
 export function justFunction<
-  P extends [arg?: any] = [arg?: any],
-  V = undefined,
-  M extends JustMeta | undefined = undefined
->(fn: JustFunction<P, V, M>) {
+  Param extends [arg?: any],
+  R extends JustEmpty
+>(fn: JustFunction<Param, R>): JustFunction<Param, readonly []>
+export function justFunction<
+  Param extends [arg?: any],
+  R extends JustUno<any>
+>(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustUno<infer V> ? JustUno<V> : never>
+export function justFunction<
+  Param extends [arg?: any],
+  R extends JustDuo<any, JustMeta>
+>(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustDuo<infer V, infer M> ? JustDuo<V, M> : never>
+export function justFunction(fn: unknown) {
   return fn
 }

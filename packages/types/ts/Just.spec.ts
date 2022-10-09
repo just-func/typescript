@@ -3,6 +3,119 @@ import { JustDuo, JustUno, JustEmpty, JustValue } from '.'
 import { justFunction, JustFunction, JustMeta, JustResult, justValue, StackTraceMeta } from './Just'
 import { duo, procedure, unit } from './testFn'
 
+describe('JustFunction', () => {
+  it('defaults to (args?: any) => []', () => {
+    const f: JustFunction = () => []
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [arg?: any], P>()
+    isType.equal<true, JustEmpty, R>()
+  })
+
+  it('does not accept more than one parameter', () => {
+    isType.equal<true, true, CanAssign<(a: number) => [], JustFunction>>()
+    isType.equal<true, true, CanAssign<(a: number) => JustEmpty, JustFunction>>()
+    isType.equal<true, false, CanAssign<(a: number, b: number) => JustEmpty, JustFunction>>()
+
+    // This is really just checking for the generic types default value.
+    // Cannot enforce this with just `JustFunction` because generic types can always be `any`
+    // Below is showing this false positive case.
+    isType.equal<true, true, CanAssign<(a: number, b: number) => JustEmpty, JustFunction<any, any>>>()
+  })
+
+  it('does not allow return void and other invalid types', () => {
+    // All these are invalid, uncomment to check
+    // can't find a way to test this
+    // type ReturnNotVoid = JustFunction<any, void>
+    // type ReturnNotScalar = JustFunction<any, number>
+    // type ReturnNotArray = JustFunction<any, number[]>
+    // type ReturnNotObject = JustFunction<any, { a: number }>
+    // type ReturnNot3Tuple = JustFunction<any, [number, number, number]>
+    // type ReturnNotMeta = JustFunction<any, [number, number]>
+
+    // This is an example showing it is not possible to enforce these with just the type alone.
+    // Need to enforce it with the helper function `justFunction()`.
+    isType.equal<true, true, CanAssign<(a: number) => void, JustFunction<any, any>>>()
+  })
+
+  it('works with JustEmpty', () => {
+    const f: JustFunction<[], JustEmpty> = () => []
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, readonly [], R>()
+    isType.equal<true, JustEmpty, R>()
+  })
+
+  it('can return JustUno', () => {
+    const f: JustFunction<[], JustUno<number>> = () => [1]
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, JustUno<number>, R>()
+  })
+
+  it('can return number literal', () => {
+    const f: JustFunction<[], JustUno<1 | 2 | 3>> = () => [1]
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, readonly [1 | 2 | 3], R>()
+    isType.equal<true, JustUno<1 | 2 | 3>, R>()
+  })
+
+  it('can return JustDuo', () => {
+    const f: JustFunction<[], [number, { log: string }]> = () => [1, { log: 'hello' }]
+
+    const foo = () => []
+    const [x] = foo()
+    x
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, readonly [number, { log: string }], R>()
+    isType.equal<true, JustDuo<number, { log: string }>, R>()
+  })
+})
+
+describe(`${justFunction.name}()`, () => {
+  it('infers () => JustEmpty', () => {
+    const f = justFunction(() => [])
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, JustEmpty, R>()
+  })
+
+  it('does not accept more than one param', () => {
+    isType.equal<true, false, CanAssign<[(a: number, b: number) => JustEmpty], Parameters<typeof justFunction>>>()
+  })
+
+  it('infers (value) => JustUno', () => {
+    const f = justFunction((_: number) => [1])
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [number], P>()
+    isType.equal<true, JustUno<number>, R>()
+  })
+
+  it('infers () => JustDuo', () => {
+    const f = justFunction(() => [1, { log: 'hello' }])
+    expect(f()).toEqual([1, { log: 'hello' }])
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, JustDuo<number, { log: string }>, R>()
+  })
+})
+
 describe('JustEmpty', () => {
   it('can pass to function with no arguments', () => {
     const value: JustEmpty = []
@@ -61,13 +174,11 @@ describe(`${justValue.name}()`, () => {
   })
 })
 
-
 describe('JustResult', () => {
   it('defaults to void', () => {
     function returnVoid(): JustResult { }
     const r = returnVoid()
     isType.equal<true, void, typeof r>()
-    expect(r).toBe(undefined)
   })
 
   it('can specify value as undefined', () => {
@@ -86,6 +197,10 @@ describe('JustResult', () => {
     function returnNumber(): JustResult<number | undefined> { return }
     const r = returnNumber()
     isType.equal<true, number | undefined, typeof r>()
+  })
+
+  it('does not support single level array', () => {
+    isType.equal<true, false, CanAssign<number[], JustResult>>()
   })
 
   it('can specify array, which goes into the tuple', () => {
@@ -143,46 +258,5 @@ describe('JustMeta', () => {
 describe('StackTraceMeta', () => {
   it('is a JustMeta', () => {
     isType.equal<true, true, CanAssign<StackTraceMeta, JustMeta>>()
-  })
-})
-
-describe('JustFunction', () => {
-  it('defaults to (args?: any) => JustEmpty', () => {
-    const f: JustFunction = () => []
-    expect(f()).toEqual([])
-
-    isType.equal<true, [arg?: any], Parameters<typeof f>>()
-    isType.equal<true, JustEmpty, ReturnType<typeof f>>()
-  })
-
-  it('do not accept more than one parameter', () => {
-    isType.equal<true, true, CanAssign<(a: number) => [], JustFunction>>()
-    isType.equal<true, false, CanAssign<(a: number, b: number) => [], JustFunction>>()
-  })
-})
-
-describe(`${justFunction.name}()`, () => {
-  it('infers () => JustUno', () => {
-    const f = justFunction(() => [1])
-    expect(f()).toEqual([1])
-
-    isType.equal<true, [], Parameters<typeof f>>()
-    isType.equal<true, JustUno<number>, ReturnType<typeof f>>()
-  })
-
-  it('infers () => JustDuo', () => {
-    const f = justFunction(() => [1, { log: 'hello' }])
-    expect(f()).toEqual([1, { log: 'hello' }])
-
-    isType.equal<true, [], Parameters<typeof f>>()
-    isType.equal<true, JustDuo<number, { log: string }>, ReturnType<typeof f>>()
-  })
-
-  it('infers (value) => JustEmpty', () => {
-    const f = justFunction((_v: number) => [])
-    expect(f(1)).toEqual([])
-
-    isType.equal<true, [number], Parameters<typeof f>>()
-    isType.equal<true, JustEmpty, ReturnType<typeof f>>()
   })
 })
