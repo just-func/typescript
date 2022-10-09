@@ -58,7 +58,10 @@ export type JustReturnTypes = JustEmpty | JustUno<any> | JustDuo<any, JustMeta>
 export type JustFunction<
   Param extends JustParams = JustParams,
   R extends JustReturnTypes = JustEmpty
-> = (...args: Param) => (R extends readonly [infer V, infer M] ? readonly [V, M] : R)
+> = (...args: Param) => (R extends [infer V, infer M]
+  ? readonly [V, M]
+  : (R extends [infer V] ? readonly [V] : R)
+)
 
 export function justFunction<
   Param extends JustParams,

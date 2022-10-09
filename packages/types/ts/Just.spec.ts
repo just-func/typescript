@@ -71,6 +71,15 @@ describe('JustFunction', () => {
     isType.equal<true, JustUno<number>, R>()
   })
 
+  it('adjust [T] to readonly [T] (JustUno)', () => {
+    const f: JustFunction<[], [number]> = () => [1]
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, JustUno<number>, R>()
+  })
+
   it('can return number literal', () => {
     const f: JustFunction<[], JustUno<1 | 2 | 3>> = () => [1]
 
@@ -82,11 +91,18 @@ describe('JustFunction', () => {
   })
 
   it('can return JustDuo', () => {
+    const f: JustFunction<[], JustDuo<number, { log: string }>> = () => [1, { log: 'hello' }]
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [], P>()
+    isType.equal<true, readonly [number, { log: string }], R>()
+    isType.equal<true, JustDuo<number, { log: string }>, R>()
+  })
+
+  it('adjust [V, M] to readonly [V, M] (JustDuo)', () => {
     const f: JustFunction<[], [number, { log: string }]> = () => [1, { log: 'hello' }]
 
-    const foo = () => []
-    const [x] = foo()
-    x
     type P = Parameters<typeof f>
     type R = ReturnType<typeof f>
     isType.equal<true, [], P>()
