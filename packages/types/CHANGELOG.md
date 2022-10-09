@@ -1,5 +1,11 @@
 # @just-func/types
 
+## 0.3.0
+
+### Minor Changes
+
+- c7f76f6: Add `justValue()`, `JustFunction`, and `justFunction()`
+
 ## 0.2.1
 
 ### Patch Changes
