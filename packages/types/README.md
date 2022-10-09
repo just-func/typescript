@@ -16,6 +16,13 @@ Type System of [just-func][just-func-typescript].
 - [`JustFunction`]: Functions that compliant with [just-func]
 - [`justFunction()`]: helper to define [`JustFunction`].
 
+## Type guards
+
+- `isJustEmpty()`
+- `isJustUno()`
+- `isJustDuo()`
+- `isJustValue()`
+
 ## Metadata
 
 Metadata is a first-class concept in [just-func].
