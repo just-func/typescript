@@ -43,7 +43,7 @@
     "watch": "run-p jest:watch"
   },
   "dependencies": {
-    "@just-func/types": "workspace:^*",
+    "@just-func/types": "workspace:^",
     "type-plus": "^4.9.0"
   },
   "devDependencies": {
