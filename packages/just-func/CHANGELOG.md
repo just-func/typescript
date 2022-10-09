@@ -1,5 +1,19 @@
 # just-func
 
+## 0.2.0
+
+### Minor Changes
+
+- ffd66d1: Add `compose()`
+
+### Patch Changes
+
+- Updated dependencies [6e9db07]
+- Updated dependencies [a90c6bd]
+- Updated dependencies [2827b04]
+- Updated dependencies [6e75faf]
+  - @just-func/types@0.4.0
+
 ## 0.1.7
 
 ### Patch Changes

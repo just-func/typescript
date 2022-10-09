@@ -1,5 +1,35 @@
 # @just-func/types
 
+## 0.4.0
+
+### Minor Changes
+
+- 6e9db07: Fix `JustValue` to default `Value` type to `void`.
+  That's what `JustEmpty` should have.
+
+  Rename `JustReturnTypes` to `JustValues`.
+
+- 2827b04: Extract `ErrorMeta` From `JustMeta`: this keeps the `JustMeta` about just the basic structure.
+  Remove `JustMetaPara`: Now `JustMeta` is identical to it.
+  Add `ToJustValue<V>`: Adjust common types to `JustValue`. e.g. `[X]` to `JustUno<X>`
+  Remove `JustParams`: Fix `JustFunction` to use `JustValues` instead.
+  Improve `justValue()`: to allow calling without params.
+
+  Note that `JustResult` is not used right now.
+  It's not deprecated, but possibly will be,
+  if we do not find any use cases for it.
+
+### Patch Changes
+
+- a90c6bd: Allows `toJustValue()` to be invoked with no param.
+  So that it can be used when returning nothing (`void`).
+- 6e75faf: Add validators/type guards:
+
+  - `isJustEmpty()`
+  - `isJustUno()`
+  - `isJustDuo()`
+  - `isJustValue()`
+
 ## 0.3.3
 
 ### Patch Changes
