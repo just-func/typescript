@@ -47,21 +47,25 @@ export type StackTraceMeta = {
   ssf?: AnyFunction
 }
 
+export type JustMetaParam = {
+  readonly [k: string | symbol]: any
+}
+
 export type JustFunction<
-  Param extends [arg?: any] = [arg?: any],
+  Param extends [arg?: any, meta?: JustMetaParam] = [arg?: any, meta?: JustMetaParam],
   R extends JustEmpty | JustUno<any> | JustDuo<any, JustMeta> = JustEmpty
 > = (...args: Param) => (R extends readonly [infer V, infer M] ? readonly [V, M] : R)
 
 export function justFunction<
-  Param extends [arg?: any],
+  Param extends [arg?: any, meta?: JustMetaParam],
   R extends JustEmpty
 >(fn: JustFunction<Param, R>): JustFunction<Param, readonly []>
 export function justFunction<
-  Param extends [arg?: any],
+  Param extends [arg?: any, meta?: JustMetaParam],
   R extends JustUno<any>
 >(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustUno<infer V> ? JustUno<V> : never>
 export function justFunction<
-  Param extends [arg?: any],
+  Param extends [arg?: any, meta?: JustMetaParam],
   R extends JustDuo<any, JustMeta>
 >(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustDuo<infer V, infer M> ? JustDuo<V, M> : never>
 export function justFunction(fn: unknown) {

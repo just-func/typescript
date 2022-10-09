@@ -1,15 +1,15 @@
 import { CanAssign, isType } from 'type-plus'
 import { JustDuo, JustUno, JustEmpty, JustValue } from '.'
-import { justFunction, JustFunction, JustMeta, JustResult, justValue, StackTraceMeta } from './Just'
+import { justFunction, JustFunction, JustMeta, JustMetaParam, JustResult, justValue, StackTraceMeta } from './Just'
 import { duo, procedure, unit } from './testFn'
 
 describe('JustFunction', () => {
-  it('defaults to (args?: any) => []', () => {
+  it('defaults to (args?: any, meta?: JustMetaParam) => []', () => {
     const f: JustFunction = () => []
 
     type P = Parameters<typeof f>
     type R = ReturnType<typeof f>
-    isType.equal<true, [arg?: any], P>()
+    isType.equal<true, [arg?: any, meta?: JustMetaParam], P>()
     isType.equal<true, JustEmpty, R>()
   })
 
@@ -17,11 +17,24 @@ describe('JustFunction', () => {
     isType.equal<true, true, CanAssign<(a: number) => [], JustFunction>>()
     isType.equal<true, true, CanAssign<(a: number) => JustEmpty, JustFunction>>()
     isType.equal<true, false, CanAssign<(a: number, b: number) => JustEmpty, JustFunction>>()
+    isType.equal<true, false, CanAssign<(a: number, b?: number) => JustEmpty, JustFunction>>()
+    isType.equal<true, false, CanAssign<(a?: number, b?: number) => JustEmpty, JustFunction>>()
 
     // This is really just checking for the generic types default value.
     // Cannot enforce this with just `JustFunction` because generic types can always be `any`
     // Below is showing this false positive case.
     isType.equal<true, true, CanAssign<(a: number, b: number) => JustEmpty, JustFunction<any, any>>>()
+  })
+
+  it('accepts second param as `JustMetaParam', () => {
+    isType.equal<true, true, CanAssign<(a: number, meta?: JustMetaParam) => JustEmpty, JustFunction>>()
+
+    const f: JustFunction<[string, StackTraceMeta]> = (_: string, _meta?: StackTraceMeta) => []
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [string, StackTraceMeta], P>()
+    isType.equal<true, JustEmpty, R>()
   })
 
   it('does not allow return void and other invalid types', () => {
@@ -102,6 +115,15 @@ describe(`${justFunction.name}()`, () => {
     type P = Parameters<typeof f>
     type R = ReturnType<typeof f>
     isType.equal<true, [number], P>()
+    isType.equal<true, JustUno<number>, R>()
+  })
+
+  it('infers (value, meta) => JustUno', () => {
+    const f = justFunction((_: number, _m: StackTraceMeta) => [1])
+
+    type P = Parameters<typeof f>
+    type R = ReturnType<typeof f>
+    isType.equal<true, [number, StackTraceMeta], P>()
     isType.equal<true, JustUno<number>, R>()
   })
 
