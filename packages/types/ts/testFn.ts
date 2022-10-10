@@ -1,7 +1,7 @@
-import { JustMeta } from './Just'
+import type { JustMeta } from './Just'
 
 /**
- * Function the takes nothing and returns nothing.
+ * procedure = function that takes nothing and returns nothing.
  * @see <https://softwareengineering.stackexchange.com/questions/276859/what-is-the-name-of-a-function-that-takes-no-argument-and-returns-nothing>
  */
 export function procedure() { }

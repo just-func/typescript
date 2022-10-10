@@ -1,4 +1,4 @@
-import { JustDuo, JustEmpty, JustMeta, JustUno } from './Just'
+import type { JustDuo, JustEmpty, JustMeta, JustUno } from './Just'
 
 export function toJustValue<V extends void | undefined | JustEmpty>(value?: V, meta?: JustMeta): JustEmpty
 export function toJustValue<V extends JustUno<any>>(value?: V, meta?: JustMeta): Readonly<V>

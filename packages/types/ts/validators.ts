@@ -1,4 +1,4 @@
-import { JustDuo, JustEmpty, JustMeta, JustUno, JustValue } from './Just'
+import type { JustDuo, JustEmpty, JustMeta, JustUno, JustValue } from './Just'
 
 /**
  * Check if the value is `JustEmpty`
