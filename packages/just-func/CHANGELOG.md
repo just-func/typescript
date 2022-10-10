@@ -1,5 +1,14 @@
 # just-func
 
+## 0.2.3
+
+### Patch Changes
+
+- c090861: Fix workspace version.
+  `workspace:^` should be the correct one which will `changeset` will update the version correctly.
+
+  Not sure do we need `version: cs version && pnpm install`. Going to see if this release works or not.
+
 ## 0.2.2
 
 ### Patch Changes
