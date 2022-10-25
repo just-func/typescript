@@ -16,7 +16,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       rimraf: 3.0.2
       turbo: 1.6.0
       typescript: 4.8.4
@@ -33,7 +33,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.2.2
       jest-watch-toggle-config: 2.0.1_fy2l3fwjcr35i4icy7c53hx2di
       jest-watch-typeahead: 2.2.0_jest@29.2.2
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       rimraf: 3.0.2
       turbo: 1.6.0
       typescript: 4.8.4
@@ -61,7 +61,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -91,7 +91,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.2.2
       jest-watch-toggle-config: 2.0.1_fy2l3fwjcr35i4icy7c53hx2di
       jest-watch-typeahead: 2.2.0_jest@29.2.2
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -118,7 +118,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -146,7 +146,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.2.2
       jest-watch-toggle-config: 2.0.1_fy2l3fwjcr35i4icy7c53hx2di
       jest-watch-typeahead: 2.2.0_jest@29.2.2
-      npm-check-updates: 16.3.14
+      npm-check-updates: 16.3.15
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -7109,8 +7109,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/16.3.14:
-    resolution: {integrity: sha512-6sJg4rILKJiXGYPZei0lgFIe+5/nxuwh7PP3SDeZH0Oh2fJfnnzXtO8CQTG2JugYcB5p5nkksyN+NE1YE8XRYg==}
+  /npm-check-updates/16.3.15:
+    resolution: {integrity: sha512-gRjApPUQxcdZuwIMTvWxPrB1mBWTml0Xj4t50vxdsItXUaNryYGrGve3ouZGxbowcs46Tji1tSbw7+9lnGT0sA==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -7138,7 +7138,7 @@ packages:
       semver: 7.3.8
       semver-utils: 1.1.4
       source-map-support: 0.5.21
-      spawn-please: 1.0.0
+      spawn-please: 2.0.1
       untildify: 4.0.0
       update-notifier: 6.0.2
       yaml: 2.1.3
@@ -8299,9 +8299,11 @@ packages:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: true
 
-  /spawn-please/1.0.0:
-    resolution: {integrity: sha512-Kz33ip6NRNKuyTRo3aDWyWxeGeM0ORDO552Fs6E1nj4pLWPkl37SrRtTnq+MEopVaqgmaO6bAvVS+v64BJ5M/A==}
-    engines: {node: '>=10'}
+  /spawn-please/2.0.1:
+    resolution: {integrity: sha512-W+cFbZR2q2mMTfjz5ZGvhBAiX+e/zczFCNlbS9mxiSdYswBXwUuBUT+a0urH+xZZa8f/bs0mXHyZsZHR9hKogA==}
+    engines: {node: '>=14'}
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /spawndamnit/2.0.0:
