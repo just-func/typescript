@@ -16,7 +16,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       rimraf: 3.0.2
       turbo: 1.6.3
       typescript: 4.8.4
@@ -33,7 +33,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-toggle-config: 2.0.1_5r7dcuxf46wmavd5vppjo4z2ka
       jest-watch-typeahead: 2.2.0_jest@29.3.1
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       rimraf: 3.0.2
       turbo: 1.6.3
       typescript: 4.8.4
@@ -61,7 +61,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -91,7 +91,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-toggle-config: 2.0.1_5r7dcuxf46wmavd5vppjo4z2ka
       jest-watch-typeahead: 2.2.0_jest@29.3.1
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -118,7 +118,7 @@ importers:
       jest-watch-suspend: 1.1.2
       jest-watch-toggle-config: 2.0.1
       jest-watch-typeahead: 2.2.0
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -146,7 +146,7 @@ importers:
       jest-watch-suspend: 1.1.2_jest@29.3.1
       jest-watch-toggle-config: 2.0.1_5r7dcuxf46wmavd5vppjo4z2ka
       jest-watch-typeahead: 2.2.0_jest@29.3.1
-      npm-check-updates: 16.3.20
+      npm-check-updates: 16.3.22
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
@@ -7164,8 +7164,8 @@ packages:
       npm-normalize-package-bin: 3.0.0
     dev: true
 
-  /npm-check-updates/16.3.20:
-    resolution: {integrity: sha512-0wnUjdcBx16UrUGNNl8TZHEF5DGLIy5IC+IZK9v44zUYhwKzaQb4Le1oBYUNsmw2l0T8nNP9iVUiC1ScbozOhA==}
+  /npm-check-updates/16.3.22:
+    resolution: {integrity: sha512-GDqBHVduJuLInhEsgQ+BDCBr4C5oUnyja3OKNzJc1AX1utEd+tTjYvUnmZNeNE5WDizLCzKoy/3MA8+ionJypA==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
