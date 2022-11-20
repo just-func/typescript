@@ -39,9 +39,9 @@ export type JustValue<
  * @type Value the value already in the right type, e.g. `[number]`.
  * This type adjust it to `JustUno<number>`.
  */
-export type ToJustValue<Value> = Value extends [infer V, infer M]
+export type ToJustValue<Value> = Value extends readonly [infer V, infer M]
   ? readonly [V, M]
-  : (Value extends [infer V] ? readonly [V] : Value)
+  : (Value extends readonly [infer V] ? readonly [V] : readonly [])
 
 /**
  * Describes what JustValues can be.
@@ -63,23 +63,42 @@ export type JustResult<
     ? JustDuo<Value, Meta>
     : (Value extends Array<any> ? JustUno<Value> : Value))
 
+/**
+ * Type of functions in `just-func`.
+ * This type describe one function,
+ * does not support function overloads.
+ *
+ * This can be used for type guard.
+ */
 export type JustFunction<
   Param extends JustValues = JustEmpty,
   R extends JustValues = JustEmpty
 > = (...args: Param) => ToJustValue<R>
 
+/**
+ * Define a `just-func` function
+ * @deparecated `just()` is probably better.
+ */
 export function justFunction<
-  Param extends JustValues,
-  R extends JustEmpty
->(fn: JustFunction<Param, R>): JustFunction<Param, readonly []>
-export function justFunction<
-  Param extends JustValues,
-  R extends JustUno<any>
->(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustUno<infer V> ? JustUno<V> : never>
-export function justFunction<
-  Param extends JustValues,
-  R extends JustDuo<any, JustMeta>
->(fn: JustFunction<Param, R>): JustFunction<Param, R extends JustDuo<infer V, infer M> ? JustDuo<V, M> : never>
-export function justFunction(fn: unknown) {
-  return fn
+  F extends JustFunction<any, any>
+>(fn: F): Parameters<F> extends readonly []
+  ? () => ToJustValue<ReturnType<F>>
+  : (Parameters<F> extends readonly [infer V]
+    ? (v: V) => ToJustValue<ReturnType<F>>
+    : (Parameters<F> extends readonly [infer V, infer M]
+      ? (v: V, m: M) => ToJustValue<ReturnType<F>>
+      : never
+    )) {
+  return fn as any
+}
+
+/**
+ * Write code compliant with `just-func`.
+ */
+export function just<F extends (v: any, meta: JustMeta) => JustValues>(fn: F): F
+export function just<V, M extends JustMeta>(value: JustDuo<V, M>): JustDuo<V, M>
+export function just<V>(value: JustUno<V>): JustUno<V>
+export function just(value: JustEmpty): JustEmpty
+export function just(value: unknown) {
+  return value
 }

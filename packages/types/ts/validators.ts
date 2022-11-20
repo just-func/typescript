@@ -1,14 +1,14 @@
 import type { JustDuo, JustEmpty, JustMeta, JustUno, JustValue } from './Just'
 
 /**
- * Check if the value is `JustEmpty`
+ * Type guard for `JustEmpty`
  */
 export function isJustEmpty(value: unknown): value is JustEmpty {
   return Array.isArray(value) && value.length === 0
 }
 
 /**
- * Check if the vlaue is `JustUno<V>`
+ * Type guard for `JustUno<V>`
  */
 export function isJustUno<V>(
   value: unknown,
@@ -19,6 +19,9 @@ export function isJustUno<V>(
   return validator ? !!validator(value as any) : true
 }
 
+/**
+ * Type guard for `JustDuo<V, M>`
+ */
 export function isJustDuo<V, M extends JustMeta = JustMeta>(
   value: unknown,
   validator?: (v: JustDuo<V, M>) => unknown

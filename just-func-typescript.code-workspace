@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "just-func",
+			"path": "../just-func"
+		},
+		{
+			"name": "just-func-typescript",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			".depcheckrc": "yaml"
+		}
+	}
+}
