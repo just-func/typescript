@@ -1,5 +1,23 @@
 # @just-func/types
 
+## 0.5.0
+
+### Minor Changes
+
+- 4d0bf46: Fix `ToJustValue<V>` to return `JustEmpty` correctly.
+
+  Also added `readonly` to others. Seems like newer TypeScript needs that.
+
+  `justFunction()` generic type is changed to keep the same behavior.
+  Again TypeScript seems to changed the behavior causing the original type to fail.
+
+  Add `just()` for writing `just-func` compliant code.
+  It supports function overloads, which is not supported by `justFunction()`.
+
+### Patch Changes
+
+- 3bea285: Make some import with `type`.
+
 ## 0.4.0
 
 ### Minor Changes
