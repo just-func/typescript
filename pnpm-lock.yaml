@@ -11,7 +11,7 @@ importers:
       husky: 8.0.2
       rimraf: 3.0.2
       turbo: 1.6.3
-      typescript: 4.9.3
+      typescript: 4.9.4
     devDependencies:
       '@changesets/cli': 2.25.2
       '@commitlint/cli': 17.3.0
@@ -20,7 +20,7 @@ importers:
       husky: 8.0.2
       rimraf: 3.0.2
       turbo: 1.6.3
-      typescript: 4.9.3
+      typescript: 4.9.4
 
   packages/just-func:
     specifiers:
@@ -1657,13 +1657,13 @@ packages:
       '@types/node': 14.18.31
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.1.1_kjtesrzmdzjxgbmvhf7rq2qmfi
+      cosmiconfig-typescript-loader: 4.1.1_actquoywcdbztrhgozsoa2okpq
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_zdwmxzc3s32eishk7hircltqdy
-      typescript: 4.9.3
+      ts-node: 10.9.1_eiq2jfwhkfxzdlip7de552li4a
+      typescript: 4.9.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -3499,7 +3499,7 @@ packages:
       browserslist: 4.21.4
     dev: true
 
-  /cosmiconfig-typescript-loader/4.1.1_kjtesrzmdzjxgbmvhf7rq2qmfi:
+  /cosmiconfig-typescript-loader/4.1.1_actquoywcdbztrhgozsoa2okpq:
     resolution: {integrity: sha512-9DHpa379Gp0o0Zefii35fcmuuin6q92FnLDffzdZ0l9tVd3nEobG3O+MZ06+kuBvFTSVScvNb/oHA13Nd4iipg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -3510,8 +3510,8 @@ packages:
     dependencies:
       '@types/node': 14.18.31
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_zdwmxzc3s32eishk7hircltqdy
-      typescript: 4.9.3
+      ts-node: 10.9.1_eiq2jfwhkfxzdlip7de552li4a
+      typescript: 4.9.4
     dev: true
 
   /cosmiconfig/7.0.1:
@@ -7455,7 +7455,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.9.1_zdwmxzc3s32eishk7hircltqdy:
+  /ts-node/10.9.1_eiq2jfwhkfxzdlip7de552li4a:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -7481,7 +7481,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.9.3
+      typescript: 4.9.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -7638,6 +7638,12 @@ packages:
 
   /typescript/4.9.3:
     resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
