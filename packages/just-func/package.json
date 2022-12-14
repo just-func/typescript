@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@just-func/types": "workspace:^",
-    "type-plus": "^4.13.2"
+    "type-plus": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.5",

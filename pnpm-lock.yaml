@@ -47,11 +47,11 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: ^4.13.2
+      type-plus: ^5.0.0
       typescript: ^4.9.3
     dependencies:
       '@just-func/types': link:../types
-      type-plus: 4.13.2
+      type-plus: 5.0.0
     devDependencies:
       '@babel/core': 7.20.5
       '@babel/preset-env': 7.20.2_@babel+core@7.20.5
@@ -100,10 +100,10 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.1.0
-      type-plus: ^4.18.0
+      type-plus: ^5.0.0
       typescript: ^4.9.3
     dependencies:
-      type-plus: 4.18.0
+      type-plus: 5.0.0
     devDependencies:
       '@babel/core': 7.20.5
       '@babel/preset-env': 7.20.2_@babel+core@7.20.5
@@ -7357,8 +7357,8 @@ packages:
       source-map-support: 0.5.21
     dev: true
 
-  /tersify/3.10.5:
-    resolution: {integrity: sha512-dLgsTbGVH/6Z+KU4d+NqMmsMFRwRmTFNxsl5vKGkUmaSQ0TTAwnv+Hck5S8Pdn5bcZSyjR3aTvvetJ7ZUs+ZYg==}
+  /tersify/3.11.1:
+    resolution: {integrity: sha512-W/Kv1z+cgDRsI10p9CyCZJ+gopPUVOz1/h7OPntr6D52iIHQTbsg40MBUoaG82q8IgD/GKoWhoujg/rOxQW7SA==}
     dependencies:
       acorn: 8.8.0
       is-buffer: 2.0.5
@@ -7622,17 +7622,10 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /type-plus/4.13.2:
-    resolution: {integrity: sha512-VMmH+coX8a7cn+DHM9LDP1X7suklW38iuPy9UOJsOc2EieP+82igmaxZM+bvnWvTtvMMLRkWE3/3jIBlfEsFoA==}
+  /type-plus/5.0.0:
+    resolution: {integrity: sha512-nKp5pOQDldmR9BdEjLplLFwiXTVhOK2kReBSgVJ65URDLXCqENYzVDCONaExADIIc1CAGzvzTkB0TUgMAWR2qQ==}
     dependencies:
-      tersify: 3.10.5
-      unpartial: 1.0.4
-    dev: false
-
-  /type-plus/4.18.0:
-    resolution: {integrity: sha512-Hds5neDmogRcQheEmdjbEqVq/cE9UUdd9Ic7eCRI2/AzUH1JB+0ha3Hb3Spn2m1PQRBA61kNjbgSLaljNp0L9Q==}
-    dependencies:
-      tersify: 3.10.5
+      tersify: 3.11.1
       unpartial: 1.0.4
     dev: false
 
