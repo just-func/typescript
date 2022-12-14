@@ -1,5 +1,13 @@
 # just-func
 
+## 0.2.5
+
+### Patch Changes
+
+- Update type-plus
+- Updated dependencies
+  - @just-func/types@0.5.1
+
 ## 0.2.4
 
 ### Patch Changes

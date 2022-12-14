@@ -1,5 +1,11 @@
 # @just-func/types
 
+## 0.5.1
+
+### Patch Changes
+
+- Update type-plus
+
 ## 0.5.0
 
 ### Minor Changes
