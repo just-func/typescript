@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "7.18.6",
     "@size-limit/file": "^8.1.0",
     "@size-limit/webpack": "^8.1.0",
-    "@types/jest": "29.2.4",
+    "@types/jest": "29.2.5",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "cross-env": "7.0.3",

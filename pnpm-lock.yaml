@@ -30,7 +30,7 @@ importers:
       '@just-func/types': workspace:^
       '@size-limit/file': ^8.1.0
       '@size-limit/webpack': ^8.1.0
-      '@types/jest': 29.2.4
+      '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': ^5.43.0
       '@typescript-eslint/parser': ^5.43.0
       cross-env: 7.0.3
@@ -58,7 +58,7 @@ importers:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.7
       '@size-limit/file': 8.1.0_size-limit@8.1.0
       '@size-limit/webpack': 8.1.0_size-limit@8.1.0
-      '@types/jest': 29.2.4
+      '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': 5.43.0_ktqfeppixc5nckasemq235yomq
       '@typescript-eslint/parser': 5.43.0_f5jcydormhcqaoeadqwgqigppy
       cross-env: 7.0.3
@@ -83,7 +83,7 @@ importers:
       '@babel/preset-env': 7.20.2
       '@babel/preset-typescript': 7.18.6
       '@size-limit/preset-small-lib': 8.1.0
-      '@types/jest': 29.2.4
+      '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': ^5.43.0
       '@typescript-eslint/parser': ^5.43.0
       cross-env: 7.0.3
@@ -109,7 +109,7 @@ importers:
       '@babel/preset-env': 7.20.2_@babel+core@7.20.7
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.7
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
-      '@types/jest': 29.2.4
+      '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': 5.43.0_ktqfeppixc5nckasemq235yomq
       '@typescript-eslint/parser': 5.43.0_f5jcydormhcqaoeadqwgqigppy
       cross-env: 7.0.3
@@ -2386,8 +2386,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.2.4:
-    resolution: {integrity: sha512-PipFB04k2qTRPePduVLTRiPzQfvMeLwUN3Z21hsAKaB/W9IIzgB2pizCL466ftJlcyZqnHoC9ZHpxLGl3fS86A==}
+  /@types/jest/29.2.5:
+    resolution: {integrity: sha512-H2cSxkKgVmqNHXP7TC2L/WUorrZu8ZigyRywfVzv6EyBlxj39n4C00hjXYQWsbwqgElaj/CiAeSRmk5GoaKTgw==}
     dependencies:
       expect: 29.3.1
       pretty-format: 29.3.1
