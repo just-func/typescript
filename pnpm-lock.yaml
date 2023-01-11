@@ -46,7 +46,7 @@ importers:
       jest-watch-typeahead: 2.2.1
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 8.1.0
+      size-limit: 8.1.1
       type-plus: ^5.0.0
       typescript: ^4.9.3
     dependencies:
@@ -56,8 +56,8 @@ importers:
       '@babel/core': 7.20.12
       '@babel/preset-env': 7.20.2_@babel+core@7.20.12
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
-      '@size-limit/file': 8.1.0_size-limit@8.1.0
-      '@size-limit/webpack': 8.1.0_size-limit@8.1.0
+      '@size-limit/file': 8.1.0_size-limit@8.1.1
+      '@size-limit/webpack': 8.1.0_size-limit@8.1.1
       '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': 5.43.0_3wmess66i6kamj6uvhkglnlwxa
       '@typescript-eslint/parser': 5.43.0_p4cjf2r47dnfiqufepc5hp43sq
@@ -74,7 +74,7 @@ importers:
       jest-watch-typeahead: 2.2.1_jest@29.3.1
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 8.1.0
+      size-limit: 8.1.1
       typescript: 4.9.3
 
   packages/types:
@@ -99,7 +99,7 @@ importers:
       jest-watch-typeahead: 2.2.1
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 8.1.0
+      size-limit: 8.1.1
       type-plus: ^5.0.0
       typescript: ^4.9.3
     dependencies:
@@ -108,7 +108,7 @@ importers:
       '@babel/core': 7.20.12
       '@babel/preset-env': 7.20.2_@babel+core@7.20.12
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
-      '@size-limit/preset-small-lib': 8.1.1_size-limit@8.1.0
+      '@size-limit/preset-small-lib': 8.1.1_size-limit@8.1.1
       '@types/jest': 29.2.5
       '@typescript-eslint/eslint-plugin': 5.43.0_3wmess66i6kamj6uvhkglnlwxa
       '@typescript-eslint/parser': 5.43.0_p4cjf2r47dnfiqufepc5hp43sq
@@ -125,7 +125,7 @@ importers:
       jest-watch-typeahead: 2.2.1_jest@29.3.1
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      size-limit: 8.1.0
+      size-limit: 8.1.1
       typescript: 4.9.3
 
 packages:
@@ -2438,7 +2438,7 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
-  /@size-limit/esbuild/8.1.1_size-limit@8.1.0:
+  /@size-limit/esbuild/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-Y071Vs3M3pxNplE98SFf32IREXSMzBErkO2uAeh3CeZfyUOItpH59ETlmEAAf7blCRrUXhygecJl80NbRNWSsA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2446,40 +2446,40 @@ packages:
     dependencies:
       esbuild: 0.16.16
       nanoid: 3.3.4
-      size-limit: 8.1.0
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/file/8.1.0_size-limit@8.1.0:
+  /@size-limit/file/8.1.0_size-limit@8.1.1:
     resolution: {integrity: sha512-Ur+NgJSRHBnbQBrD8X2doxXYdBcVJsMxe2KfWrUmnZ6wYz09YKhQ1iYLqNztjf2yf/JEp00zp1vyhmimUQfUHQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       size-limit: 8.1.0
     dependencies:
       semver: 7.3.7
-      size-limit: 8.1.0
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/file/8.1.1_size-limit@8.1.0:
+  /@size-limit/file/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-4VW3r5TuKXGyycrWdhKhYaBSpWQq2sxuz0UOMoKYiTGcYBM6Sqpk4342RbnoIjVDmj7kyD4PS4eBstUnvF3TSA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       size-limit: 8.1.1
     dependencies:
       semver: 7.3.8
-      size-limit: 8.1.0
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/preset-small-lib/8.1.1_size-limit@8.1.0:
+  /@size-limit/preset-small-lib/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-AB1v9zQ9F3ii/3xOJQOHmxaPsuQ3BgA99P2NtpOg5l0vP/306k/xfvveZL98a6gk20hIWWysrzrI1ydKeF9Iaw==}
     peerDependencies:
       size-limit: 8.1.1
     dependencies:
-      '@size-limit/esbuild': 8.1.1_size-limit@8.1.0
-      '@size-limit/file': 8.1.1_size-limit@8.1.0
-      size-limit: 8.1.0
+      '@size-limit/esbuild': 8.1.1_size-limit@8.1.1
+      '@size-limit/file': 8.1.1_size-limit@8.1.1
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/webpack/8.1.0_size-limit@8.1.0:
+  /@size-limit/webpack/8.1.0_size-limit@8.1.1:
     resolution: {integrity: sha512-TLego57hQbR0dmYZzIa9KZecebGMJoxZaqJTx9v3NDllxt6kJTljVXWghEvsGLpdKQfZTqraZ6nRm38+lG3sNw==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2487,7 +2487,7 @@ packages:
     dependencies:
       escape-string-regexp: 4.0.0
       nanoid: 3.3.4
-      size-limit: 8.1.0
+      size-limit: 8.1.1
       webpack: 5.74.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -7042,8 +7042,8 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: true
 
-  /size-limit/8.1.0:
-    resolution: {integrity: sha512-bUL+Uyyt/G+a1XzKlI2WKHVDepmXtqMDhF65pdtjccheiQTNjExWW4nFefgbRL2QgNTzRfK6ayFKjO3o4ER4gg==}
+  /size-limit/8.1.1:
+    resolution: {integrity: sha512-8Zx+SJVxwcsDBYEl3Xt+FilpuxshVcgq446L8e1k8xD+Qa4LuUmFeesb+oiaRpoJnWCrOd7QUaiU9kFVocIeHQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     dependencies:
