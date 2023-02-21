@@ -46,9 +46,9 @@
     "type-plus": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
+    "@babel/core": "7.21.0",
     "@babel/preset-env": "7.20.2",
-    "@babel/preset-typescript": "7.18.6",
+    "@babel/preset-typescript": "7.21.0",
     "@size-limit/file": "^8.1.0",
     "@size-limit/webpack": "^8.1.0",
     "@types/jest": "29.4.0",
