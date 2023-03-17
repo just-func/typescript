@@ -47,11 +47,11 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.2.4
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
       '@just-func/types': link:../types
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@babel/core': 7.21.3
       '@babel/preset-env': 7.20.2_@babel+core@7.21.3
@@ -100,10 +100,10 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       size-limit: 8.2.4
-      type-plus: ^5.0.0
+      type-plus: ^6.0.0
       typescript: ^5.0.0
     dependencies:
-      type-plus: 5.0.0
+      type-plus: 6.0.0
     devDependencies:
       '@babel/core': 7.21.3
       '@babel/preset-env': 7.20.2_@babel+core@7.21.3
@@ -7726,8 +7726,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /type-plus/5.0.0:
-    resolution: {integrity: sha512-nKp5pOQDldmR9BdEjLplLFwiXTVhOK2kReBSgVJ65URDLXCqENYzVDCONaExADIIc1CAGzvzTkB0TUgMAWR2qQ==}
+  /type-plus/6.0.0:
+    resolution: {integrity: sha512-ezkCTr6LGC87w9LHc83XJnJFfaeEa/nPhr4yzBKv2+Pw0y4FXKHgrJ2GWM4H1nSKzcEPv4q/Sfw4MKmi8NTxbg==}
     dependencies:
       tersify: 3.11.1
       unpartial: 1.0.4
