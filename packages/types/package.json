@@ -44,7 +44,7 @@
     "watch": "run-p jest:watch"
   },
   "dependencies": {
-    "type-plus": "^6.0.0"
+    "type-plus": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.21.4",
