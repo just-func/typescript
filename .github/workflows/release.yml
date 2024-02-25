@@ -5,11 +5,11 @@ on:
 
 jobs:
   code:
-    uses: justland/.github/.github/workflows/pnpm-verify.yml@main
+    uses: repobuddy/.github/workflows/pnpm-verify.yml@main
     with:
       os: '["ubuntu-latest"]'
 
   release:
-    uses: justland/.github/.github/workflows/pnpm-release-changeset.yml@main
+    uses: repobuddy/.github/workflows/pnpm-release-changeset.yml@main
     needs: code
     secrets: inherit
