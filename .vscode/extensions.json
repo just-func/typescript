@@ -1,8 +1,7 @@
 {
   "recommendations": [
-    "arcanis.vscode-zipfs",
     "dbaeumer.vscode-eslint",
-    "valentjn.vscode-ltex",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "neo-ltex.ltex"
   ]
 }
