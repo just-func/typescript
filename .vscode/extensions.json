@@ -2,7 +2,8 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
+    "github.vscode-pull-request-github",
     "neo-ltex.ltex",
-    "pflannery.vscode-versionlens"
+    "pflannery.vscode-versionlens",
   ]
 }
