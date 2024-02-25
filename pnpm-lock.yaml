@@ -52,8 +52,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.21.4)
       '@size-limit/file':
-        specifier: ^8.1.0
-        version: 8.1.0(size-limit@8.2.4)
+        specifier: ^11.0.2
+        version: 11.0.2(size-limit@8.2.4)
       '@size-limit/webpack':
         specifier: ^8.1.0
         version: 8.1.0(size-limit@8.2.4)
@@ -2616,13 +2616,12 @@ packages:
       size-limit: 8.2.4
     dev: true
 
-  /@size-limit/file@8.1.0(size-limit@8.2.4):
-    resolution: {integrity: sha512-Ur+NgJSRHBnbQBrD8X2doxXYdBcVJsMxe2KfWrUmnZ6wYz09YKhQ1iYLqNztjf2yf/JEp00zp1vyhmimUQfUHQ==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+  /@size-limit/file@11.0.2(size-limit@8.2.4):
+    resolution: {integrity: sha512-874lrMtWYRL+xb/6xzejjwD+krfHTOo+2uFGpZfJScvuNv91Ni2O7k0o09zC70VzCYBGkXquV92ln/H+/ognGg==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 8.1.0
+      size-limit: 11.0.2
     dependencies:
-      semver: 7.3.7
       size-limit: 8.2.4
     dev: true
 
@@ -7639,14 +7638,6 @@ packages:
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
-    dev: true
-
-  /semver@7.3.7:
-    resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver@7.3.8:
