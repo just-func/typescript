@@ -48,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "7.21.4",
     "@babel/preset-env": "7.21.4",
-    "@babel/preset-typescript": "7.21.4",
+    "@babel/preset-typescript": "7.23.3",
     "@size-limit/file": "^8.1.0",
     "@size-limit/webpack": "^8.1.0",
     "@types/jest": "29.5.1",
