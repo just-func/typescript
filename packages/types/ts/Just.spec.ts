@@ -280,7 +280,7 @@ describe('JustFunction', () => {
     // type ReturnNot3Tuple = JustFunction<any, [number, number, number]>
     // type ReturnNotMeta = JustFunction<any, [number, number]>
 
-    isType.f<CanAssign<(a: number) => void, JustFunction<any, any>>>()
+    isType.equal<true, false, CanAssign<(a: number) => void, JustFunction<any, any>>>()
   })
 
   it('can return JustEmpty with type', () => {
