@@ -1,5 +1,13 @@
 # @just-func/types
 
+## 0.5.2
+
+### Patch Changes
+
+- c2c3ae0: Point `repository`, `homepage`, and `bugs` at `just-func/typescript`. They still named
+  `justland/just-func-typescript`, which the repo left some time ago — `repository` is read
+  when generating provenance, so the published metadata was wrong.
+
 ## 0.5.1
 
 ### Patch Changes
