@@ -8,3 +8,9 @@ jobs:
     uses: just-func/.github/.github/workflows/pnpm-verify.yml@main
     with:
       os: '["ubuntu-latest"]'
+      # The shared workflow still defaults to '[18, 20]', and its Playwright
+      # install step now refuses Node 18 ("Playwright requires Node.js 20 or
+      # higher"), so every PR here failed before reaching `pnpm verify`. This
+      # pins the matrix to the range the sibling just-func repo declares in
+      # `engines`: ^20.19.0 || ^22.13.0 || >=24.
+      node-version: '[20, 22, 24]'
