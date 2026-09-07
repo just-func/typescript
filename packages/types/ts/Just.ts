@@ -29,7 +29,7 @@ export type JustDuo<Value, Meta extends JustMeta = JustMeta> = readonly [Value, 
  */
 export type JustValue<Value = void, Meta extends JustMeta | undefined = undefined> = Meta extends JustMeta
 	? JustDuo<Value, Meta>
-	: Equal<Value, void, JustEmpty, JustUno<Value>>
+	: Equal<Value, void, { $then: JustEmpty; $else: JustUno<Value> }>
 
 /**
  * Adjust the Value type to a proper JustValue.
