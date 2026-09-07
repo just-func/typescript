@@ -10,6 +10,13 @@ jobs:
       os: '["ubuntu-latest"]'
 
   release:
-    uses: just-func/.github/.github/workflows/pnpm-release-changeset.yml@main
+    uses: just-func/.github/.github/workflows/pnpm-release-changeset-oidc.yml@main
     needs: code
-    secrets: inherit
+    # Declared explicitly rather than inherited. A callee can only narrow what the
+    # caller holds, so these must be granted here; declaring the block also drops every
+    # unlisted scope to `none`, which is why contents and pull-requests appear next to
+    # the one scope OIDC obviously needs.
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
