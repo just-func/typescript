@@ -3,7 +3,7 @@
 'just-func': minor
 ---
 
-Move `type-plus` to `^8.0.0-beta.11`.
+Pin `type-plus` to `8.0.0-beta.10`, exactly.
 
 The last published `@just-func/types` (0.5.1) still declares `type-plus: ^5.0.0`, and the
 move to `^7.6.0` has never reached the registry, so the jump consumers actually see with
@@ -13,6 +13,13 @@ this release is **5 -> 8**.
 reaching `@just-func/types` transitively (through `standard-log`, for example) were being
 dragged onto `type-plus` 5.6.0 and therefore `tersify` 3.12.1, forcing two majors of
 `tersify` into their tree. `pnpm why tersify -r` now resolves a single version, 4.0.6.
+
+The version is pinned rather than caret-ranged. `^8.0.0-beta.10` resolves to
+`>=8.0.0-beta.10 <9.0.0-0`, which admits every later 8.0.0 prerelease, `8.0.0` itself and
+`8.1.0` — and `type-plus` 8 is a prerelease line where breaking changes land between
+betas, as the two below show. An exact version makes each bump a reviewable change
+instead of something a lockfile refresh can do silently. Move back to a caret when 8.0.0
+is stable.
 
 Two knock-on changes:
 

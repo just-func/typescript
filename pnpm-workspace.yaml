@@ -1,16 +1,6 @@
 packages:
   - packages/*
 
-# Exempts a specific version from the `minimumreleaseage=1440` soak in .npmrc.
-#
-# type-plus 8 is deliberately taken as a prerelease, so waiting out a 24h soak on each
-# beta defeats the point of pinning one. The exemption is a single exact version, never a
-# range, so a future beta does not inherit it silently.
-#
-# Drop this once type-plus 8.0.0 is stable and the dependency range moves off the beta.
-minimumReleaseAgeExclude:
-  - type-plus@8.0.0-beta.11
-
 # Native postinstall scripts pnpm blocks by default. They fail at build time rather
 # than install time, so an unlisted one surfaces as a confusing build error.
 onlyBuiltDependencies:
