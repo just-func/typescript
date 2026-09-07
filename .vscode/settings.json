@@ -1,14 +1,6 @@
 {
-  "cSpell.words": [
-    "macos",
-    "pnpm",
-    "repobuddy",
-    "snyk",
-    "testname",
-    "tsbuildinfo",
-    "turborepo"
-  ],
-  "files.associations": {
-    ".depcheckrc": "yaml"
-  }
+	"cSpell.words": ["macos", "pnpm", "repobuddy", "snyk", "testname", "tsbuildinfo", "turborepo"],
+	"files.associations": {
+		".depcheckrc": "yaml"
+	}
 }

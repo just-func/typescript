@@ -1,6 +1,11 @@
+# One package per line, never a wildcard. A `@size-limit/*` glob used to live here and
+# concealed adapters nothing referenced any more.
 ignores:
-  - "@size-limit/*"
-  - "@types/jest"
-  - "@typescript-eslint/parser"
-  - npm-check-updates
-  - size-limit
+  # Named by biome.json's `extends`, which depcheck does not parse.
+  - "@repobuddy/biome"
+  # The size-limit adapter selected by the `size-limit` block; never imported.
+  - "@size-limit/file"
+  # Named by tsconfig.json's `types`, which depcheck does not parse.
+  - "@types/node"
+  # bin-only, invoked from the `clean` and `nuke` scripts.
+  - rimraf

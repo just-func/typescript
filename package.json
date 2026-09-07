@@ -1,34 +1,36 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "coverage": "turbo run coverage",
-    "cs": "changeset",
-    "depcheck": "turbo run depcheck",
-    "dev": "turbo run dev --parallel",
-    "jf": "pnpm --filter just-func",
-    "just-func": "pnpm --filter just-func",
-    "lint": "turbo run lint",
-    "prepare": "husky",
-    "nuke": "turbo run nuke && rimraf node_modules",
-    "release": "changeset publish",
-    "size": "turbo run size",
-    "test": "turbo run test",
-    "types": "pnpm --filter @just-func/types",
-    "version": "changeset version",
-    "verify": "turbo run lint build coverage depcheck size",
-    "watch": "jest --watch"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^3.0.2",
-    "@commitlint/cli": "^18.6.1",
-    "@commitlint/config-conventional": "^18.6.2",
-    "eslint": "^8.57.0",
-    "husky": "^9.0.11",
-    "rimraf": "^5.0.5",
-    "turbo": "^1.12.4",
-    "typescript": "^5.3.3"
-  },
-  "packageManager": "pnpm@8.15.4"
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"coverage": "turbo run coverage",
+		"cs": "changeset",
+		"depcheck": "turbo run depcheck",
+		"dev": "turbo run dev --parallel",
+		"jf": "pnpm --filter just-func",
+		"just-func": "pnpm --filter just-func",
+		"lint": "turbo run lint",
+		"nuke": "turbo run nuke && rimraf node_modules",
+		"prepare": "husky",
+		"release": "changeset publish",
+		"size": "turbo run size",
+		"test": "turbo run test",
+		"typecheck": "turbo run typecheck",
+		"types": "pnpm --filter @just-func/types",
+		"verify": "turbo run lint typecheck build coverage depcheck size",
+		"version": "changeset version",
+		"watch": "turbo run watch --parallel"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.12",
+		"@changesets/cli": "^3.0.2",
+		"@commitlint/cli": "^21.2.2",
+		"@commitlint/config-conventional": "^21.2.2",
+		"@repobuddy/biome": "^2.4.0",
+		"husky": "^9.1.7",
+		"rimraf": "^6.1.3",
+		"turbo": "^2.10.12",
+		"typescript": "^7.0.2"
+	},
+	"packageManager": "pnpm@12.3.4"
 }
