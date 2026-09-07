@@ -23,8 +23,11 @@ is stable.
 
 Two knock-on changes:
 
-- `type-plus` 8 declares a `typescript` peer of `>= 5.4.0`, because it uses `NoInfer`.
-  Consumers below TypeScript 5.4 will not be able to compile against these packages.
+- `type-plus` 8.0.0-beta.10 declares a `typescript` peer of `>= 5.6.0`. Consumers below
+  TypeScript 5.6 will not be able to compile against these packages. (beta.11 widened
+  that to `>= 5.4.0`; beta.10 is the narrower one.)
+- `type-plus` 8 depends on `unpartial` ^1.0.7, which declares `engines: node >= 20`, so
+  the effective Node floor for these packages' runtime dependencies is Node 20.
 - `Equal` changed its branching signature from positional (`Equal<A, B, Then, Else>`) to
   an options object (`Equal<A, B, { $then, $else }>`). `JustValue` is updated to match;
   the type it resolves to is unchanged.
@@ -32,4 +35,4 @@ Two knock-on changes:
 Bump level: `minor`. No exported type or runtime signature changed shape, but on 0.x
 `minor` is the breaking slot, and this is breaking for consumers — `type-plus` is a
 regular dependency whose types surface through `JustValue`, and the TypeScript floor
-moves to 5.4.
+moves to 5.6.
