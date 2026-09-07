@@ -1,39 +1,23 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "clean": {
-      "cache": false
-    },
-    "coverage": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "depcheck": {},
-    "dev": {
-      "cache": false
-    },
-    "lint": {},
-    "nuke": {
-      "dependsOn": [
-        "clean"
-      ],
-      "cache": false
-    },
-    "size": {
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "test": {
-      "dependsOn": [
-        "^build"
-      ]
-    }
-  }
+	"$schema": "https://turborepo.com/schema.json",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["ts/**", "tsdown.config.mts", "tsconfig.json"],
+			"outputs": ["lib/**"]
+		},
+		"clean": { "cache": false },
+		"coverage": {
+			"dependsOn": ["^build"],
+			"outputs": ["coverage/**"]
+		},
+		"depcheck": {},
+		"dev": { "cache": false, "persistent": true },
+		"lint": {},
+		"nuke": { "dependsOn": ["clean"], "cache": false },
+		"size": { "dependsOn": ["build"] },
+		"test": { "dependsOn": ["^build"] },
+		"typecheck": { "dependsOn": ["^build"] },
+		"watch": { "cache": false, "persistent": true }
+	}
 }

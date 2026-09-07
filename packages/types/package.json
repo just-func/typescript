@@ -1,80 +1,63 @@
 {
-  "name": "@just-func/types",
-  "version": "0.5.2",
-  "description": "Types for just-func code",
-  "keywords": [
-    "just-func",
-    "types"
-  ],
-  "homepage": "https://github.com/just-func/typescript/tree/main/packages/types",
-  "bugs": {
-    "url": "https://github.com/just-func/typescript/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/just-func/typescript.git",
-    "directory": "packages/types"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Homa Wong (unional)",
-    "email": "homawong@gmail.com",
-    "url": "https://github.com/unional"
-  },
-  "sideEffects": false,
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
-  "scripts": {
-    "build": "run-s ts:clean ts:build",
-    "build:watch": "run-s ts:clean ts:build:watch",
-    "clean": "rimraf .nyc_output .tsbuildinfo coverage cjs esm lib",
-    "coverage": "jest --coverage",
-    "depcheck": "depcheck",
-    "jest:test": "jest",
-    "jest:watch": "jest --watch",
-    "lint": "cross-env TIMING=1 eslint --ext=js,ts .",
-    "nuke": "rimraf node_modules",
-    "size": "size-limit",
-    "test": "run-p jest:test",
-    "ts:build": "tsc -p tsconfig.build.json",
-    "ts:build:watch": "tsc -p tsconfig.build.json --watch",
-    "ts:clean": "rimraf .tsbuildinfo",
-    "verify": "npm-run-all -p build lint coverage depcheck -s size",
-    "watch": "run-p jest:watch"
-  },
-  "dependencies": {
-    "type-plus": "^7.6.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.21.4",
-    "@babel/preset-env": "7.21.4",
-    "@babel/preset-typescript": "7.23.3",
-    "@size-limit/preset-small-lib": "8.2.4",
-    "@types/jest": "29.5.1",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
-    "cross-env": "7.0.3",
-    "depcheck": "1.4.3",
-    "eslint": "8.38.0",
-    "eslint-plugin-harmony": "^7.1.1",
-    "jest": "29.5.0",
-    "jest-progress-tracker": "3.0.4",
-    "jest-validate": "29.7.0",
-    "jest-watch-repeat": "2.0.0",
-    "jest-watch-suspend": "1.1.2",
-    "jest-watch-toggle-config": "2.0.1",
-    "jest-watch-typeahead": "2.2.2",
-    "npm-run-all": "4.1.5",
-    "rimraf": "3.0.2",
-    "size-limit": "8.2.4",
-    "typescript": "^5.0.0"
-  },
-  "size-limit": [
-    {
-      "path": "lib/index.js",
-      "limit": "10 kB"
-    }
-  ]
+	"name": "@just-func/types",
+	"version": "0.5.2",
+	"description": "Types for just-func code",
+	"keywords": [
+		"just-func",
+		"types"
+	],
+	"homepage": "https://github.com/just-func/typescript/tree/main/packages/types",
+	"bugs": {
+		"url": "https://github.com/just-func/typescript/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/just-func/typescript.git",
+		"directory": "packages/types"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Homa Wong (unional)",
+		"email": "homawong@gmail.com",
+		"url": "https://github.com/unional"
+	},
+	"sideEffects": false,
+	"main": "lib/index.js",
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"clean": "rimraf coverage lib",
+		"coverage": "vitest run --coverage",
+		"depcheck": "depcheck",
+		"lint": "biome check",
+		"nuke": "rimraf node_modules",
+		"size": "size-limit",
+		"test": "vitest run",
+		"typecheck": "tsc",
+		"watch": "vitest"
+	},
+	"dependencies": {
+		"type-plus": "^7.6.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.12",
+		"@repobuddy/biome": "^2.4.0",
+		"@size-limit/file": "^13.0.3",
+		"@types/node": "^24.10.1",
+		"@vitest/coverage-v8": "^5.0.0",
+		"depcheck": "^1.4.7",
+		"rimraf": "^6.1.3",
+		"size-limit": "^13.0.3",
+		"tsdown": "^0.23.0",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.0"
+	},
+	"size-limit": [
+		{
+			"path": "lib/index.js",
+			"limit": "10 kB"
+		}
+	]
 }

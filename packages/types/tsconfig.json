@@ -1,30 +1,27 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    // incremental may not be needed with `turborepo`
-    "incremental": true,
-    "inlineSources": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "outDir": "lib",
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "rootDir": "ts",
-    "sourceMap": true,
-    "strict": true,
-    "stripInternal": true,
-    "target": "ES2020",
-    "useDefineForClassFields": true
-  },
-  "include": [
-    "ts",
-    "typings"
-  ]
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "preserve",
+		"moduleDetection": "force",
+		"newLine": "LF",
+		// tsdown emits; this config only typechecks. The two jobs were fused before,
+		// which is how removing the `tsc -p` build would have silently removed
+		// typechecking as well.
+		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"stripInternal": true,
+		"target": "ES2022",
+		// TypeScript 7 no longer auto-includes every @types/* package it can see.
+		// Naming them is required, and is more precise anyway.
+		"types": ["node", "vitest/globals"],
+		"useDefineForClassFields": true
+	},
+	"include": ["ts", "tsdown.config.mts", "vitest.config.mts"]
 }
