@@ -22,9 +22,9 @@ please run `pnpm changeset` (or `pnpm cs` for short) to describe your changes.
 [changesets]: https://github.com/changesets/changesets
 [conventional commits]: https://www.conventionalcommits.org/en/v1.0.0/
 [corepack]: https://nodejs.org/api/corepack.html
-[github-action-url]: https://github.com/justland/just-func-typescript/actions
-[github-release]: https://github.com/justland/just-func-typescript/workflows/release/badge.svg
-[just-func]: https://github.com/justland/just-func-typescript/tree/main/packages/just-func
+[github-action-url]: https://github.com/just-func/typescript/actions
+[github-release]: https://github.com/just-func/typescript/actions/workflows/release.yml/badge.svg
+[just-func]: https://github.com/just-func/typescript/tree/main/packages/just-func
 [pnpm]: https://github.com/pnpm/pnpm
 [vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
 [vscode-url]: https://code.visualstudio.com/

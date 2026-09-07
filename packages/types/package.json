@@ -6,13 +6,14 @@
     "just-func",
     "types"
   ],
-  "homepage": "https://github.com/justland/just-func-typescript/tree/main/packages/types",
+  "homepage": "https://github.com/just-func/typescript/tree/main/packages/types",
   "bugs": {
-    "url": "https://github.com/justland/just-func-typescript/issues"
+    "url": "https://github.com/just-func/typescript/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justland/just-func-typescript.git"
+    "url": "git+https://github.com/just-func/typescript.git",
+    "directory": "packages/types"
   },
   "license": "MIT",
   "author": {

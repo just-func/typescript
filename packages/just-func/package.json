@@ -5,13 +5,14 @@
   "keywords": [
     "just-func"
   ],
-  "homepage": "https://github.com/justland/just-func-typescript/tree/main/packages/just-func",
+  "homepage": "https://github.com/just-func/typescript/tree/main/packages/just-func",
   "bugs": {
-    "url": "https://github.com/justland/just-func-typescript/issues"
+    "url": "https://github.com/just-func/typescript/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justland/just-func-typescript.git"
+    "url": "git+https://github.com/just-func/typescript.git",
+    "directory": "packages/just-func"
   },
   "license": "MIT",
   "author": {
