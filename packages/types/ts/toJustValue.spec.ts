@@ -1,31 +1,31 @@
-import { assertType, isType } from 'type-plus'
+import { testType } from 'type-plus'
 import { isJustEmpty, type JustDuo, type JustEmpty, type JustUno, toJustValue } from '.'
 import { procedure } from './testFn'
 
 it('returns JustEmpty when the function returns nothing', () => {
 	const r = toJustValue(procedure())
-	isType.equal<true, JustEmpty, typeof r>()
+	testType.equal<JustEmpty, typeof r>(true)
 	expect(r).toEqual([])
 })
 
 it('returns JustEmpty when the value is undefined', () => {
 	const r = toJustValue(undefined)
-	isType.equal<true, JustEmpty, typeof r>()
+	testType.equal<JustEmpty, typeof r>(true)
 	expect(r).toEqual([])
 })
 
 it('returns JustEmpty when the value is [] (JustEmpty)', () => {
 	const r = toJustValue([])
-	isType.equal<true, JustEmpty, typeof r>()
+	testType.equal<JustEmpty, typeof r>(true)
 })
 
 it('wrap values not undefined or array into JustUno', () => {
-	assertType<JustUno<null>>(assertWrapValue(null))
-	assertType<JustUno<true>>(assertWrapValue(true))
-	assertType<JustUno<false>>(assertWrapValue(false))
-	assertType<JustUno<string>>(assertWrapValue('a'))
-	assertType<JustUno<number>>(assertWrapValue(1))
-	assertType<JustUno<object>>(assertWrapValue({}))
+	assertWrapValue(null) satisfies JustUno<null>
+	assertWrapValue(true) satisfies JustUno<true>
+	assertWrapValue(false) satisfies JustUno<false>
+	assertWrapValue('a') satisfies JustUno<string>
+	assertWrapValue(1) satisfies JustUno<number>
+	assertWrapValue({}) satisfies JustUno<object>
 })
 function assertWrapValue<V>(value: V) {
 	const r = toJustValue(value)
@@ -35,18 +35,18 @@ function assertWrapValue<V>(value: V) {
 
 it('returns JustUno inferring Value type', () => {
 	const r = toJustValue([1])
-	isType.equal<true, JustUno<number>, typeof r>()
+	testType.equal<JustUno<number>, typeof r>(true)
 })
 
 it('returns JustUno inferring literal Value type', () => {
 	const r = toJustValue([1 as const])
-	isType.equal<true, JustUno<1>, typeof r>()
+	testType.equal<JustUno<1>, typeof r>(true)
 })
 
 it('returns JustDuo inferring Value and Meta', () => {
 	const r = toJustValue(['a', { logs: ['abc'] }])
 
-	isType.equal<true, JustDuo<string, { logs: string[] }>, typeof r>()
+	testType.equal<JustDuo<string, { logs: string[] }>, typeof r>(true)
 })
 
 it('can accept a JustMeta (but not used)', () => {
