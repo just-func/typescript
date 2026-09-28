@@ -1,4 +1,4 @@
-import { isType } from 'type-plus'
+import { testType } from 'type-plus'
 import {
 	isJustDuo,
 	isJustEmpty,
@@ -32,7 +32,7 @@ describe(`${isJustEmpty.name}()`, () => {
 	it('can be used as type guard', () => {
 		const value: unknown = []
 		if (isJustEmpty(value)) {
-			isType.equal<true, JustEmpty, typeof value>()
+			testType.equal<JustEmpty, typeof value>(true)
 		}
 	})
 })
@@ -58,14 +58,14 @@ describe(`${isJustUno.name}()`, () => {
 	it('can be used as type guard', () => {
 		const value: unknown = [1]
 		if (isJustUno<number>(value)) {
-			isType.equal<true, JustUno<number>, typeof value>()
+			testType.equal<JustUno<number>, typeof value>(true)
 		}
 	})
 
 	it('can be used as type guard with validator', () => {
 		const value: unknown = [1]
 		if (isJustUno<number>(value, (v) => typeof v[0] === 'number')) {
-			isType.equal<true, JustUno<number>, typeof value>()
+			testType.equal<JustUno<number>, typeof value>(true)
 		}
 	})
 })
@@ -102,21 +102,21 @@ describe(`${isJustDuo.name}()`, () => {
 	it('can be used as type guard', () => {
 		const value: unknown = [1, { foo: 2 }]
 		if (isJustDuo<number, { foo: number }>(value)) {
-			isType.equal<true, JustDuo<number, { foo: number }>, typeof value>()
+			testType.equal<JustDuo<number, { foo: number }>, typeof value>(true)
 		}
 	})
 
 	it('can be used as type guard with validator', () => {
 		const value: unknown = [1, { foo: 2 }]
 		if (isJustDuo<number, { foo: number }>(value, (v) => typeof v[0] === 'number' && typeof v[1].foo === 'number')) {
-			isType.equal<true, JustDuo<number, { foo: number }>, typeof value>()
+			testType.equal<JustDuo<number, { foo: number }>, typeof value>(true)
 		}
 	})
 
 	it('can skep the meta type, which defaults to JustMeta', () => {
 		const value: unknown = [1, { foo: 2 }]
 		if (isJustDuo<number>(value)) {
-			isType.equal<true, JustDuo<number, JustMeta>, typeof value>()
+			testType.equal<JustDuo<number, JustMeta>, typeof value>(true)
 		}
 	})
 })
@@ -139,27 +139,27 @@ describe(`${isJustValue.name}()`, () => {
 		// JustEmpty case doesn't really need a validator.
 		// Adding it here for completeness
 		if (isJustValue(empty, (v) => isJustEmpty(v))) {
-			isType.equal<true, JustEmpty, typeof empty>()
+			testType.equal<JustEmpty, typeof empty>(true)
 		}
 
 		const uno: unknown = [1]
 		if (
 			isJustValue<number>(uno, (v) => {
-				isType.equal<true, JustUno<number>, typeof v>()
+				testType.equal<JustUno<number>, typeof v>(true)
 				return typeof v[0] === 'number'
 			})
 		) {
-			isType.equal<true, JustUno<number>, typeof uno>()
+			testType.equal<JustUno<number>, typeof uno>(true)
 		}
 
 		const duo: unknown = [1, { foo: 2 }]
 		if (
 			isJustValue<number, { foo: number }>(duo, (v) => {
-				isType.equal<true, JustDuo<number, { foo: number }>, typeof v>()
+				testType.equal<JustDuo<number, { foo: number }>, typeof v>(true)
 				return typeof v[0] === 'number' && typeof v[1].foo === 'number'
 			})
 		) {
-			isType.equal<true, JustDuo<number, { foo: number }>, typeof duo>()
+			testType.equal<JustDuo<number, { foo: number }>, typeof duo>(true)
 		}
 	})
 
@@ -168,17 +168,17 @@ describe(`${isJustValue.name}()`, () => {
 		// and trust the type you specified in the generics.
 		const empty: unknown = []
 		if (isJustValue(empty)) {
-			isType.equal<true, JustEmpty, typeof empty>()
+			testType.equal<JustEmpty, typeof empty>(true)
 		}
 
 		const uno: unknown = [1]
 		if (isJustValue<number>(uno)) {
-			isType.equal<true, JustUno<number>, typeof uno>()
+			testType.equal<JustUno<number>, typeof uno>(true)
 		}
 
 		const duo: unknown = [1, { foo: 2 }]
 		if (isJustValue<number, { foo: number }>(duo)) {
-			isType.equal<true, JustDuo<number, { foo: number }>, typeof duo>()
+			testType.equal<JustDuo<number, { foo: number }>, typeof duo>(true)
 		}
 	})
 })

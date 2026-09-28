@@ -1,4 +1,4 @@
-import type { AnyFunction, Equal } from 'type-plus'
+import type { AnyFunction, IsEqual } from 'type-plus'
 
 export type JustMeta = { readonly [k: string | symbol]: any }
 
@@ -29,7 +29,7 @@ export type JustDuo<Value, Meta extends JustMeta = JustMeta> = readonly [Value, 
  */
 export type JustValue<Value = void, Meta extends JustMeta | undefined = undefined> = Meta extends JustMeta
 	? JustDuo<Value, Meta>
-	: Equal<Value, void, { $then: JustEmpty; $else: JustUno<Value> }>
+	: IsEqual<Value, void, { $then: JustEmpty; $else: JustUno<Value> }>
 
 /**
  * Adjust the Value type to a proper JustValue.

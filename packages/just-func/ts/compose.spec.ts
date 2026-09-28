@@ -1,5 +1,5 @@
 import { isJustEmpty, type JustEmpty, type JustFunction, type JustUno, justValue } from '@just-func/types'
-import { isType } from 'type-plus'
+import { testType } from 'type-plus'
 import { compose } from './index'
 
 describe(`${compose.name}()`, () => {
@@ -15,7 +15,7 @@ describe(`${compose.name}()`, () => {
 
 		expect(result()).toEqual([1])
 		// @ts-expect-error just-func/typescript#413: justValue() cannot infer Value from a conditional-type position, so it narrows to JustEmpty.
-		isType.equal<true, JustFunction<JustEmpty, JustUno<number>>, typeof result>()
+		testType.equal<JustFunction<JustEmpty, JustUno<number>>, typeof result>(true)
 	})
 
 	it('compose calls', () => {
@@ -29,7 +29,7 @@ describe(`${compose.name}()`, () => {
 
 		expect(result()).toEqual(['2'])
 		// @ts-expect-error just-func/typescript#413: justValue() cannot infer Value from a conditional-type position, so it narrows to JustEmpty.
-		isType.equal<true, JustFunction<JustEmpty, JustUno<string>>, typeof result>()
+		testType.equal<JustFunction<JustEmpty, JustUno<string>>, typeof result>(true)
 	})
 
 	it('optional param', () => {
