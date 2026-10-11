@@ -1,4 +1,5 @@
-import { record, testType } from 'type-plus'
+import { record } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import {
 	type ErrorMeta,
 	type JustDuo,

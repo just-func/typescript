@@ -1,5 +1,5 @@
 import { isJustEmpty, type JustEmpty, type JustFunction, type JustUno, justValue } from '@just-func/types'
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { compose } from './index'
 
 describe(`${compose.name}()`, () => {
