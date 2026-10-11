@@ -8,7 +8,7 @@ import {
 	type JustEmpty,
 	type JustMeta,
 	type JustUno,
-} from './index'
+} from './index.js'
 
 const notJustValue = [undefined, null, 1, true, '', 'a', {}, Symbol(), () => {}, () => {}]
 

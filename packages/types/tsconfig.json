@@ -4,7 +4,7 @@
 		"declarationMap": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"module": "preserve",
+		"module": "nodenext",
 		"moduleDetection": "force",
 		"newLine": "LF",
 		// tsdown emits; this config only typechecks. The two jobs were fused before,
