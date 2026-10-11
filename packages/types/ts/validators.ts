@@ -1,4 +1,4 @@
-import type { JustDuo, JustEmpty, JustMeta, JustUno, JustValue } from './Just'
+import type { JustDuo, JustEmpty, JustMeta, JustUno, JustValue } from './Just.js'
 
 /**
  * Type guard for `JustEmpty`

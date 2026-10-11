@@ -1,6 +1,6 @@
 import { testType } from 'type-plus/testing'
-import { isJustEmpty, type JustDuo, type JustEmpty, type JustUno, toJustValue } from '.'
-import { procedure } from './testFn'
+import { isJustEmpty, type JustDuo, type JustEmpty, type JustUno, toJustValue } from './index.js'
+import { procedure } from './testFn.js'
 
 it('returns JustEmpty when the function returns nothing', () => {
 	const r = toJustValue(procedure())

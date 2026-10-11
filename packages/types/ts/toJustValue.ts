@@ -1,4 +1,4 @@
-import type { JustDuo, JustEmpty, JustMeta, JustUno } from './Just'
+import type { JustDuo, JustEmpty, JustMeta, JustUno } from './Just.js'
 
 // `void` in the union is what lets `toJustValue()` be called with no argument at all
 // and still select this overload; `undefined` alone does not.

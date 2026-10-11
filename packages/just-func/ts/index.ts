@@ -1,2 +1,2 @@
 export * from '@just-func/types'
-export * from './compose'
+export * from './compose.js'

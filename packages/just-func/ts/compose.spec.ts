@@ -1,6 +1,6 @@
 import { isJustEmpty, type JustEmpty, type JustFunction, type JustUno, justValue } from '@just-func/types'
 import { testType } from 'type-plus/testing'
-import { compose } from './index'
+import { compose } from './index.js'
 
 describe(`${compose.name}()`, () => {
 	it('returns JustEmpty if the input array is empty', () => {

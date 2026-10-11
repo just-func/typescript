@@ -13,8 +13,8 @@ import {
 	justFunction,
 	justValue,
 	type StackTraceMeta,
-} from '.'
-import { duo, procedure, unit } from './testFn'
+} from './index.js'
+import { duo, procedure, unit } from './testFn.js'
 
 describe('JustEmpty', () => {
 	it('can pass to function with no arguments', () => {

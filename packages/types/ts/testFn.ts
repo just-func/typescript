@@ -1,4 +1,4 @@
-import type { JustMeta } from './Just'
+import type { JustMeta } from './Just.js'
 
 /**
  * procedure = function that takes nothing and returns nothing.
