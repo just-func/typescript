@@ -1,4 +1,4 @@
-import { testType } from 'type-plus'
+import { testType } from 'type-plus/testing'
 import { isJustEmpty, type JustDuo, type JustEmpty, type JustUno, toJustValue } from '.'
 import { procedure } from './testFn'
 
