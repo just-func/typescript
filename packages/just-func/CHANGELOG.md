@@ -1,5 +1,13 @@
 # just-func
 
+## 0.4.1
+
+### Patch Changes
+
+- f3a19dd: Include `CHANGELOG.md` in the published package.
+- Updated dependencies [f3a19dd]
+  - @just-func/types@0.7.1
+
 ## 0.4.0
 
 ### Minor Changes
