@@ -1,5 +1,11 @@
 # @just-func/types
 
+## 0.7.1
+
+### Patch Changes
+
+- f3a19dd: Include `CHANGELOG.md` in the published package.
+
 ## 0.7.0
 
 ### Minor Changes
